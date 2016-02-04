@@ -11,10 +11,10 @@ Make a simple clock, with set and 12/24 hour time displays.
 *  Group Members   *
 *------------------*
 * Alexander Kimani *
-*  Andrew Megaris  *
+* Andrew Megaris   *
 * Dillon Fruhwirth *
-*    Rusty Rid     *
-*  Sierra Seacat   *
+* Rusty Riedel     *
+* Sierra Seacat    *
 *------------------*
 
 
