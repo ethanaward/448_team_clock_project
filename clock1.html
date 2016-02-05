@@ -17,7 +17,20 @@
  
 <p>Please input seconds:</p>
 <input id="u_sec">
+
+<button type="button" onclick="changeTime()">Change time</button>
  
+<script>
+var mil = 0;
+ 
+function changeTime() {
+    var h, m, s
+    h = document.getElementById("u_hour").value;
+	m = document.getElementById("u_min").value;
+	s = document.getElementById("u_sec").value;
+ 
+	mil = s*1000 +m*60000+h*60*60000;
+}
 
 </script>
  
