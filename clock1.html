@@ -28,10 +28,22 @@ function changeTime() {
     h = document.getElementById("u_hour").value;
 	m = document.getElementById("u_min").value;
 	s = document.getElementById("u_sec").value;
- 
+
 	mil = s*1000 +m*60000+h*60*60000;
 }
 
+window.setInterval(addTime, 1000);
+ 
+function addTime() {
+	mil += 1000;
+	h_remainder = mil%(60*60*1000);
+	m_remainder = h_remainder%(60000);
+	s_remainder = m_remainder%(1000);
+
+	document.getElementById("hour").innerHTML = (mil - h_remainder)/(60*60*1000);
+	document.getElementById("min").innerHTML = (h_remainder-m_remainder)/60000;
+	document.getElementById("sec").innerHTML = (m_remainder-s_remainder)/1000;
+} 
 </script>
  
 </body>
