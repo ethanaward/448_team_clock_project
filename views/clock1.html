@@ -17,33 +17,34 @@
  
 <p>Please input seconds:</p>
 <input id="u_sec">
-
+ 
 <button type="button" onclick="changeTime()">Change time</button>
  
 <script>
-var mil = 0;
+var sec_total = 0;
  
 function changeTime() {
-    var h, m, s
-    h = document.getElementById("u_hour").value;
-	m = document.getElementById("u_min").value;
-	s = document.getElementById("u_sec").value;
-
-	mil = s * 1000 + m * 60000 + h * 60 * 60000;
+var h, m, s
+ 
+h = document.getElementById("u_hour").value;
+m = document.getElementById("u_min").value;
+s = document.getElementById("u_sec").value;
+ 
+sec_total = s*1 +m*60+h*60*60;
+ 
 }
-
+ 
 window.setInterval(addTime, 1000);
  
 function addTime() {
-	mil += 1000;
-	h_remainder = mil % ( 60 * 60 * 1000 );
-	m_remainder = h_remainder % ( 60000 );
-	s_remainder = m_remainder % ( 1000 );
-
-	document.getElementById("hour").innerHTML = ( mil - h_remainder ) / ( 60* 60 * 1000 );
-	document.getElementById("min").innerHTML = ( h_remainder - m_remainder ) / 60000;
-	document.getElementById("sec").innerHTML = ( m_remainder - s_remainder ) / 1000;
-} 
+sec_total += 1;
+h_remainder = sec_total%(60*60*1);
+m_remainder = h_remainder%(60);
+ 
+document.getElementById("hour").innerHTML = (sec_total - h_remainder)/(60*60*1);
+document.getElementById("min").innerHTML = (h_remainder-m_remainder)/60;
+document.getElementById("sec").innerHTML = m_remainder;
+}
 </script>
  
 </body>
