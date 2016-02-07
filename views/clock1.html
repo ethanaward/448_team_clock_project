@@ -17,11 +17,17 @@
  
 <p>Please input seconds:</p>
 <input id="u_sec">
+
+<p> Time format: <input type="radio" name="time_format" id="12H">12 Hour
+<input type="radio" name="time_format" id="24H">24 Hour
+</p>
  
 <button type="button" onclick="changeTime()">Change time</button>
  
 <script>
-var sec_total = 0; //Clock starts at 0:00
+document.getElementById("24H").checked = true; //Default is 24 hour format
+
+var sec_total = 0; //Default clock starts at 0:00
  
 function changeTime() {
 	var h, m, s
@@ -34,7 +40,7 @@ function changeTime() {
  
 }
  
-window.setInterval(addTime, 1000); //Add time every sec
+window.setInterval(addTime, 1000); //Add and calculate time every sec
  
 function addTime() {
 	h_remainder = sec_total%(60*60); //remainder seconds after dividing to get hours from sec_total
