@@ -4,9 +4,7 @@
  
 <h1>Clock</h1>
  
-<p id="hour">
-<p id="min">
-<p id="sec">
+<p id="time">
 </p>
  
 <p>Please input hour:</p>
@@ -46,9 +44,10 @@ function addTime() {
 	h_remainder = sec_total%(60*60); //remainder seconds after dividing to get hours from sec_total
 	m_remainder = h_remainder%(60); //remainder seconds after dividing to get mins
  
-	document.getElementById("hour").innerHTML = (sec_total - h_remainder)/(60*60); //Get whole number of hours
-	document.getElementById("min").innerHTML = (h_remainder-m_remainder)/60; //Get whole number of minutes
-	document.getElementById("sec").innerHTML = m_remainder; //Get seconds
+	var hour = (sec_total - h_remainder)/(60*60); //Get whole number of hours
+	var min = (h_remainder-m_remainder)/60; //Get whole number of minutes
+	var sec = m_remainder; //Get seconds
+	document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec; //Create time to display
 
 	sec_total += 1; //Increase time by 1 sec
 }
