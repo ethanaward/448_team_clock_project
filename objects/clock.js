@@ -1,6 +1,14 @@
-clock has
-
-get/set(12 or 24 hour) functions
-
-clock has a timer
-
+clock 
+{
+    
+    functions
+    
+    clock(),
+    ~clock(),
+    get_time(),
+    set_time(),
+    
+    variables private
+    
+    timer();
+}
