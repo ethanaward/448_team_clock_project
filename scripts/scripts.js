@@ -28,8 +28,15 @@ function changeTime() {
 	h = document.getElementById("input_hours").value;
 	m = document.getElementById("input_minutes").value;
 	s = document.getElementById("input_seconds").value;
- 
-	sec_total = s*1 +m*60+h*60*60; //Turn time user entered into total seconds
+ 	
+ 	if((s<60) && (m<60) && (h<24))
+ 	{
+ 		sec_total = s*1 +m*60+h*60*60; //Turn time user entered into total seconds
+ 	}
+ 	else
+ 	{
+ 		alert("invalid input"); //Add more error handle
+ 	}
  
 }
  
