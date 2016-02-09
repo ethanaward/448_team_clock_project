@@ -45,6 +45,13 @@ function addTime() {
 	document.getElementById("time").innerHTML = checkNumber(hour) + ":" + checkNumber(min) + ":" + checkNumber(sec); //Create time to display
 
 	sec_total += 1; //Increase time by 1 sec
+	
+	if(sec_total < 86400 -1) // make clock restart at 24:00 hr -- instead of displaying 24:00 show 0:00
+ 	{
+ 		sec_total += 1; //Increase time by 1 sec
+ 	}
+ 	else 
+ 		sec_total = 0;
 }
 
 //Adds leading zero to number for clock display if less than 10
