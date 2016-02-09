@@ -38,6 +38,10 @@ function changeTime() {
 	{
 		sec_total = s*1 +m*60+h*60*60; //Turn time user entered into total seconds
 	}
+	else
+	{
+		//Have a pop up warning of invalid time
+	}
 }
  
 window.setInterval(addTime, 1000); //Add and calculate time every sec
