@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+	<script type="text/javascript" src="scripts/scripts.js"></script>
+</head>	
+	
+<body>
+ 
+<h1>Clock:</h1>
+ 
+<h2><p id="time"></p></h2>
+<div id="toggle_display_type_div"><p>
+ Time format: <br>
+ 12 Hour: <input type="radio" name="time_format" id="12H">
+ 24 Hour: <input type="radio" name="time_format" id="24H" checked=true>
+ </p>
+</div>
+ 
+<input type="button" id="edit_time_tgl_btn" value="Edit Time" onclick="toggleEditTime()">
+
+<div id="edit_time_div">
+	<br>
+	<form id="set_time_form" display="none">
+		Set Hours:<br>
+		<input type="text" id="input_hours"><br>
+ 
+		Set Minutes:<br>
+		<input type="text" id="input_minutes"><br>
+ 
+		Set Seconds:<br>
+		<input type="text" id="input_seconds"><br>
+		
+		<input type="button" id="edit_time_accept_btn" value="Accept">
+		<input type="button" id="edit_time_clear_btn"  value="Clear" >
+		
+	</form>
+</div>
+
+
+
+
+
+
+</body>
+</html>
