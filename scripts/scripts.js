@@ -16,9 +16,12 @@ function toggleEditTime(){
         div.hidden = false;
     }
 } 
+
+//changes the time and set time accordingly, based off user input
 function changeTime() {
-  document.getElementById("edit_time_tgl_btn").hidden = false;
-  document.getElementById('edit_time_div').hidden = true;
+	//hides edit time frame and shows edit button.
+	document.getElementById("edit_time_tgl_btn").hidden = false;
+	document.getElementById('edit_time_div').hidden = true;
 	
 	var h, m, s
  
@@ -31,7 +34,7 @@ function changeTime() {
 }
  
 
- 
+
 function addTime() {
 	h_remainder = sec_total%(60*60); //remainder seconds after dividing to get hours from sec_total
 	m_remainder = h_remainder%(60); //remainder seconds after dividing to get mins
@@ -44,6 +47,7 @@ function addTime() {
 	sec_total += 1; //Increase time by 1 sec
 }
 
+//Adds leading zero to number for clock display if less than 10
 function checkNumber(number_to_check) {
 	if( number_to_check < 10)
 	number_to_check = "0" + number_to_check;
@@ -51,4 +55,6 @@ function checkNumber(number_to_check) {
 	return number_to_check
 	
 }
+
+//clears the user input fields for edit time frame. 
 function clearInputFields() {}
