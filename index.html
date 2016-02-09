@@ -1,46 +1,56 @@
 <!DOCTYPE html>
+
 <html>
+	
 <head>
+	
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 	<script type="text/javascript" src="scripts/scripts.js"></script>
+	
 </head>	
 	
 <body>
  
-<h1>Clock:</h1>
+	<h1 id ="h1">
+		EECS 448 Group Clock App:<br>
+	</h1>
+	
+	<h3> 
+		Please Set StartingTime:<br>
+		Pick intial hour formatting.
+	</h3>
  
-<h2><p id="time"></p></h2>
-<div id="toggle_display_type_div"><p>
- Time format: <br>
- 12 Hour: <input type="radio" name="time_format" id="12H">
- 24 Hour: <input type="radio" name="time_format" id="24H" checked=true>
- </p>
-</div>
+	<h2>
+		<p id="time">12:00:00 AM</p>
+	</h2>
+	
+	<div id="toggle_display_type_div">
+		<p>Hour Format: <br>
+	 	12 Hour: <input type="radio" name="time_format" id="12H" onclick=setMode(12)>
+	 	24 Hour: <input type="radio" name="time_format" id="24H" onclick=setMode(24) checked=true>
+	 	</p>
+	</div>
  
-<input type="button" id="edit_time_tgl_btn" value="Edit Time" onclick="toggleEditTime()">
+	<input type="button" id="edit_time_tgl_btn" value="Edit Time" onclick="toggleEditTime()" hidden=true>
 
-<div id="edit_time_div">
-	<br>
-	<form id="set_time_form" display="none">
-		Set Hours:<br>
-		<input type="text" id="input_hours"><br>
- 
-		Set Minutes:<br>
-		<input type="text" id="input_minutes"><br>
- 
-		Set Seconds:<br>
-		<input type="text" id="input_seconds"><br>
-		
-		<input type="button" id="edit_time_accept_btn" value="Accept">
-		<input type="button" id="edit_time_clear_btn"  value="Clear" >
-		
-	</form>
-</div>
-
-
-
-
-
-
+	<div id="edit_time_div">
+		<br>
+		<form id="set_time_form" display="none">
+			Set Hours:<br>
+			<input type="text" id="input_hours"><br>
+	 
+			Set Minutes:<br>
+			<input type="text" id="input_minutes"><br>
+	 
+			Set Seconds:<br>
+			<input type="text" id="input_seconds"><br>
+			
+			<input type="button" id="edit_time_accept_btn" value="Accept" onclick="changeTime()">
+			<input type="button" id="edit_time_clear_btn"  value="Clear" oncick="clearInputFields()" >
+			
+		</form>
+	</div>
+	
 </body>
+
 </html>

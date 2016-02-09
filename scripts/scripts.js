@@ -1,16 +1,25 @@
 
 
+
 var sec_total = 0; //Default clock starts at 0:00
+
+
+window.setInterval(addTime, 1000); //Add and calculate time every sec
+
+//Toggles the visibility of the edit_time_div and the text on the button.
 function toggleEditTime(){
 	var div = document.getElementById('edit_time_div');
-    if (div.style.display !== 'none') {
-        div.style.display = 'none';
+    if (div.hidden !== true) {
+        div.hidden = true;
     }
     else {
-        div.style.display = 'block';
+        div.hidden = false;
     }
 } 
 function changeTime() {
+  document.getElementById("edit_time_tgl_btn").hidden = false;
+  document.getElementById('edit_time_div').hidden = true;
+	
 	var h, m, s
  
 	h = document.getElementById("input_hours").value;
@@ -21,7 +30,7 @@ function changeTime() {
  
 }
  
-window.setInterval(addTime, 1000); //Add and calculate time every sec
+
  
 function addTime() {
 	h_remainder = sec_total%(60*60); //remainder seconds after dividing to get hours from sec_total
@@ -37,6 +46,9 @@ function addTime() {
 
 function checkNumber(number_to_check) {
 	if( number_to_check < 10)
-	return "0" + number_to_check;
+	number_to_check = "0" + number_to_check;
+	
+	return number_to_check
 	
 }
+function clearInputFields() {}
