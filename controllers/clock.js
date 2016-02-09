@@ -1,4 +1,7 @@
-//Basic interface for the display using a popup prompt.
+clock();
+
+get_time();
+
 
 function setTime() {
 	var newTime = prompt("Enter time (in 00:00 format)");
