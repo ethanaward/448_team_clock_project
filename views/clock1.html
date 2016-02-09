@@ -33,9 +33,11 @@ function changeTime() {
 	h = document.getElementById("u_hour").value;
 	m = document.getElementById("u_min").value;
 	s = document.getElementById("u_sec").value;
- 
-	sec_total = s*1 +m*60+h*60*60; //Turn time user entered into total seconds
- 
+
+	if((s<60) && (m<60) && (h<24)) // force valid entries for 24hr mode will do more ...
+	{
+		sec_total = s*1 +m*60+h*60*60; //Turn time user entered into total seconds
+	}
 }
  
 window.setInterval(addTime, 1000); //Add and calculate time every sec
