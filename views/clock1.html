@@ -8,13 +8,13 @@
 </p>
  
 <p>Please input hour:</p>
-<input id="u_hour">
+<input id="u_hour"> <p id="hrvalid"> </P>
  
 <p>Please input minute:</p>
-<input id="u_min">
+<input id="u_min"> <p id="minvalid"> </P>
  
 <p>Please input seconds:</p>
-<input id="u_sec">
+<input id="u_sec"> <p id="secvalid"> </P>
 
 <p> Time format: <input type="radio" name="time_format" id="12H">12 Hour
 <input type="radio" name="time_format" id="24H">24 Hour
@@ -22,6 +22,7 @@
  
 <button type="button" onclick="changeTime()">Change time</button>
  
+
 <script>
 document.getElementById("24H").checked = true; //Default is 24 hour format
 
@@ -34,14 +35,21 @@ function changeTime() {
 	m = document.getElementById("u_min").value;
 	s = document.getElementById("u_sec").value;
 
-	if((s<60) && (m<60) && (h<24)) // force valid entries for 24hr mode will do more ...
-	{
-		sec_total = s*1 +m*60+h*60*60; //Turn time user entered into total seconds
-	}
+	if(s < 60)
+		document.getElementById("secvalid").innerHTML = "";
 	else
-	{
-		//Have a pop up warning of invalid time
-	}
+		document.getElementById("secvalid").innerHTML = "invalid seconds";
+	if(m < 60)
+		document.getElementById("minvalid").innerHTML = "";
+	else
+		document.getElementById("minvalid").innerHTML = "invalid minutes";
+	if(h < 24)
+		document.getElementById("hrvalid").innerHTML = "";
+	else
+		document.getElementById("hrvalid").innerHTML = "invalid hours";
+	if((s < 60) && (m < 60) && (h < 24))
+		sec_total = s*1 +m*60+h*60*60; //Turn time user entered into total seconds
+		
 }
  
 window.setInterval(addTime, 1000); //Add and calculate time every sec
@@ -53,7 +61,7 @@ function addTime() {
 	var hour = (sec_total - h_remainder)/(60*60); //Get whole number of hours
 	var min = (h_remainder-m_remainder)/60; //Get whole number of minutes
 	var sec = m_remainder; //Get seconds
-	document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec; //Create time to display
+	document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec; //Create time to display*****
 
 	if(sec_total < 86400 -1) // make clock restart at 24:00 hr -- instead of displaying 24:00 show 0:00
 	{
