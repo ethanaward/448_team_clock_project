@@ -48,9 +48,8 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 	}
 
 	this.getTime = function(){
-		//TODO
-		//returns the hour, min, sec
-		//for the display to make into a string and display
+		//pack the time data into an array for processing in the display object.
+		return [hour, min, sec]
 	}
 
 	//TODO probably add get/set methods for extra private data

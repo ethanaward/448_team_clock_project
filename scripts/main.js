@@ -2,7 +2,7 @@
 function main(){
 	c = new Clock();
 
-	var intervalID = window.setInterval(c.update(), 1000);
+	var intervalID = window.setInterval(c.update, 1000);
 };
 
 //calls main when the script is seen by the js interpreter.

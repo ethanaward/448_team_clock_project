@@ -1,7 +1,6 @@
 var Display = function(){
 
-	this.displayTime = function(h, m, s){
-		//TODO
+	this.displayTime = function(timeArr){
 		//concatonates  a string of the time with colons
 		//displays it on the html page
 
@@ -12,7 +11,11 @@ var Display = function(){
 
 		return number_to_check
 		}
-		document.getElementById("time").innerHTML = checkNumber(h) + ":" + checkNumber(m) + ":" + checkNumber(s); //Create time to display
+
+		//build and display string
+		document.getElementById("time").innerHTML = checkNumber(timeArr[0]) + ":" + 
+													checkNumber(timeArr[1]) + ":" + 
+													checkNumber(timeArr[2]);
 		
 	}
 

@@ -6,7 +6,7 @@ var Clock = function(){
 	//update loop that runs each 1s update
 	this.update = function(){
 		t.addTime();
-		d.displayTime();
+		d.displayTime(t.getTime());
 	}
 
 	//make the menu appear when the editTime key is pressed
