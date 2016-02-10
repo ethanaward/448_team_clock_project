@@ -8,12 +8,14 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 	var meridiem = "am"//whether the clock is in am/pm on 12h format.
 
 	//methods
-	this.setTime = function() {
-		hour = document.getElementById("u_hour").value;
-		min = document.getElementById("u_min").value;
-		sec = document.getElementById("u_sec").value;
-	 
-		sec_total = sec*1 +min*60+hour*60*60; //Turn time user entered into total seconds
+	this.setTime = function(pHour, pMin, pSec) {
+		hour = pHour;//document.getElementById("u_hour").value;
+		min = pMin;//document.getElementById("u_min").value;
+		sec = pSec;//document.getElementById("u_sec").value;
+
+		//calculate the total seconds
+	 	sec_total = sec*1 +min*60+hour*60*60; //Turn time user entered into total seconds
+
 	}
 
 	this.addTime = function() {
@@ -23,8 +25,16 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 		hour = (sec_total - h_remainder)/(60*60); //Get whole number of hours
 		min = (h_remainder-m_remainder)/60; //Get whole number of minutes
 		sec = m_remainder; //Get seconds
-		
+
 		sec_total += 1; //Increase time by 1 sec
+		
+		//restart clock if next day.
+		if(sec_total < 86400 -1) // make clock restart at 24:00 hr -- instead of displaying 24:00 show 0:00
+	 	{
+	 		sec_total += 1; //Increase time by 1 sec
+	 	}
+	 	else 
+	 		sec_total = 0;
 	}	
 
 	this.setFormat = function(){

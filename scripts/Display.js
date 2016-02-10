@@ -1,14 +1,19 @@
 var Display = function(){
-	//private data
-	//TODO make html ids for outputs
-	var time = document.getElementById("time").innerHTML;
-	//etc for error message tags, and the am/pm tag.
 
-	//methods
 	this.displayTime = function(h, m, s){
 		//TODO
 		//concatonates  a string of the time with colons
 		//displays it on the html page
+
+		//TODO this was a quick hack to get the help function checkNumber working.
+		function checkNumber(number_to_check) {
+		if( number_to_check < 10)
+			number_to_check = "0" + number_to_check;
+
+		return number_to_check
+		}
+		document.getElementById("time").innerHTML = checkNumber(h) + ":" + checkNumber(m) + ":" + checkNumber(s); //Create time to display
+		
 	}
 
 	this.displayFormat = function(){
@@ -21,4 +26,16 @@ var Display = function(){
 		//TODO
 		//prints error messages at designated tags for invalid input.
 	}
+
+	//Adds leading zero to number for clock display if less than 10
+	this.checkNumber = function(number_to_check) {
+		if( number_to_check < 10)
+			number_to_check = "0" + number_to_check;
+
+		return number_to_check
+	}
+
 };
+
+var d1 = new Display();
+d1.displayTime(11, 12, 13);
