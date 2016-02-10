@@ -25,10 +25,8 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 		hour = (sec_total - h_remainder)/(60*60); //Get whole number of hours
 		min = (h_remainder-m_remainder)/60; //Get whole number of minutes
 		sec = m_remainder; //Get seconds
-
-		sec_total += 1; //Increase time by 1 sec
 		
-		//restart clock if next day.
+		//time increment logic
 		if(sec_total < 86400 -1) // make clock restart at 24:00 hr -- instead of displaying 24:00 show 0:00
 	 	{
 	 		sec_total += 1; //Increase time by 1 sec
