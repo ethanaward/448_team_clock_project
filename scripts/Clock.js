@@ -11,14 +11,15 @@ var Clock = function(){
 
 	//make the menu appear when the editTime key is pressed
 	this.editTimeMenu = function(){
-		i.editTime(t.getFormat());
+		i.openEditMenu();
 		//TODO
 		//toggle the menu opening and closing as well.
 	}
 
 	//validates the input time and sends it to the timer
 	this.setTime = function(){
-		i.setTime(t);//validates time and passes it to the timer obj t
+		//validates time and passes it to the timer obj t
+		i.setTime(t);
 	}
 
 	//clears the input fields
