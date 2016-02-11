@@ -17,10 +17,14 @@ var InputValidator = function(){
 	}
 
 	this.setTime = function(timerObj){
-		//TODO
 		//validates the input is good with given format.
 		//passes valid input to timer obj t.
 		//if input is invalid, send message to display.
+
+		//TODO are these needed? 
+		document.getElementById("edit_time_tgl_btn").hidden = false;
+		document.getElementById('edit_time_div').hidden = true;
+
 		var h = document.getElementById("input_hours").value;
 		var m = document.getElementById("input_minutes").value;
 		var s = document.getElementById("input_seconds").value;

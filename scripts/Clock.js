@@ -7,7 +7,6 @@ var Clock = function(){
 	//methods------------------------------------------
 	//initialization for the class
 	this.init = function(){
-		console.log("in init");
 		t.init();
 	}
 
