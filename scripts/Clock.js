@@ -1,5 +1,5 @@
 var Clock = function(){
-	var t = new Timer(12, 01, 00, 12);
+	var t = new Timer(0, 0, 0, 12);
 	var i = new InputValidator();
 	var d = new Display();
 
