@@ -10,40 +10,47 @@
 </head>	
 	
 <body>
- 
+ 	
 	<h1 id ="h1">
 		EECS 448 Group Clock App:<br>
 	</h1>
 	
-	<h3> 
-		Please Set StartingTime:<br>
-		Pick intial hour formatting.
-	</h3>
- 
+	
+ 	<center>
 	<h2>
+		
+		
 		<p id="time">12:00:00 AM</p>
+		
+		
 	</h2>
+	</center>
+	
+	<h3> 
+			Pick intial hour formatting. <br>
+			Please Set StartingTime: <br>
+	</h3>
 	
 	<div id="toggle_display_type_div">
-		<p>Hour Format: <br>
+		<p>Hour Format: 
 	 	12 Hour: <input type="radio" name="time_format" id="12H" onclick=setMode(12)>
 	 	24 Hour: <input type="radio" name="time_format" id="24H" onclick=setMode(24) checked=true>
 	 	</p>
 	</div>
  
 	<input type="button" id="edit_time_tgl_btn" value="Edit Time" onclick="toggleEditTime()" hidden=true>
-
+	
 	<div id="edit_time_div">
 		<br>
 		<form id="set_time_form" display="none">
 			Set Hours:<br>
-			<input type="text" id="input_hours"><br>
+			<input type="text" id="input_hours"><br><br>
 	 
 			Set Minutes:<br>
-			<input type="text" id="input_minutes"><br>
+			<input type="text" id="input_minutes"><br><br>
 	 
 			Set Seconds:<br>
-			<input type="text" id="input_seconds"><br>
+			<input type="text" id="input_seconds"><br><br>
 			
 			<input type="button" id="edit_time_accept_btn" value="Accept" onclick="changeTime()">
 			<input type="button" id="edit_time_clear_btn"  value="Clear" oncick="clearInputFields()" >
