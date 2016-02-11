@@ -4,19 +4,10 @@ var Display = function(){
 		//concatonates  a string of the time with colons
 		//displays it on the html page
 
-		//TODO this was a quick hack to get the help function checkNumber working.
-		function checkNumber(number_to_check) {
-		if( number_to_check < 10)
-			number_to_check = "0" + number_to_check;
-
-		return number_to_check
-		}
-
 		//build and display string
-		document.getElementById("time").innerHTML = checkNumber(timeArr[0]) + ":" + 
-													checkNumber(timeArr[1]) + ":" + 
-													checkNumber(timeArr[2]);
-		
+		document.getElementById("time").innerHTML = this.checkNumber(timeArr[0]) + ":" + 
+													this.checkNumber(timeArr[1]) + ":" + 
+													this.checkNumber(timeArr[2]);
 	}
 
 	this.displayFormat = function(){
