@@ -36,7 +36,7 @@
 	 	</p>
 	</div>
  
-	<input type="button" id="edit_time_tgl_btn" value="Edit Time" onclick="toggleEditTime()" hidden=true>
+	<input type="button" id="edit_time_tgl_btn" value="Edit Time" onclick="c.toggleTimeMenu()" hidden=true>
 
 	<div id="edit_time_div">
 		<br>
@@ -50,7 +50,7 @@
 			Set Seconds:<br>
 			<input type="text" id="input_seconds"><br>
 			
-			<input type="button" id="edit_time_accept_btn" value="Accept" onclick="changeTime()">
+			<input type="button" id="edit_time_accept_btn" value="Accept" onclick="c.setTime()">
 			<input type="button" id="edit_time_clear_btn"  value="Clear" oncick="clearInputFields()" >
 			
 		</form>

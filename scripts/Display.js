@@ -39,6 +39,3 @@ var Display = function(){
 	}
 
 };
-
-var d1 = new Display();
-d1.displayTime(11, 12, 13);

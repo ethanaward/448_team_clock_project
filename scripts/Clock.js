@@ -9,11 +9,9 @@ var Clock = function(){
 		d.displayTime(t.getTime());
 	}
 
-	//make the menu appear when the editTime key is pressed
-	this.editTimeMenu = function(){
-		i.openEditMenu();
-		//TODO
-		//toggle the menu opening and closing as well.
+	//make the menu toggle when the editTime key is pressed
+	this.toggleTimeMenu = function(){
+		i.toggleTimeMenu();
 	}
 
 	//validates the input time and sends it to the timer

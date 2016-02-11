@@ -1,7 +1,7 @@
 var InputValidator = function(){
 
 	//Toggles the visibility of the edit_time_div and the text on the button.
-	this.openEditMenu = function(){
+	this.toggleTimeMenu = function(){
 		var div = document.getElementById('edit_time_div');
 	    if (div.hidden !== true) {
 	        div.hidden = true;
@@ -21,9 +21,9 @@ var InputValidator = function(){
 		//validates the input is good with given format.
 		//passes valid input to timer obj t.
 		//if input is invalid, send message to display.
-		var h = document.getElementById("u_hour").value;
-		var m = document.getElementById("u_min").value;
-		var s = document.getElementById("u_sec").value;
+		var h = document.getElementById("input_hours").value;
+		var m = document.getElementById("input_minutes").value;
+		var s = document.getElementById("input_seconds").value;
 
 		if((s<60) && (m<60) && (h<24))
 	 	{	
