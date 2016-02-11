@@ -40,3 +40,14 @@ input[type=text] {
    
 }
 
+input[type=button] {
+    background-color: #999999;
+    margin-right:15px;
+    margin-left:15px;
+    padding:7px;
+    cursor:pointer;
+    border:none;
+    border-radius:5px;
+    font-size:18px;
+}
+
