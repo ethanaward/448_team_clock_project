@@ -1,6 +1,7 @@
 //main driver for the webpage (must be last js file included)
 function main(){
 	c = new Clock();
+	c.init();
 
 	var intervalID = window.setInterval(c.update, 1000);
 };

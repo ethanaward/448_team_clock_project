@@ -25,6 +25,11 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 	 		sec_total = 0;
 	}
 
+	this.init = function(){
+		//calculate total seconds before addTime() resets it to 0.
+		sec_total = hour*(60*60) + min*(60) + sec;
+	}
+
 	this.setTime = function(pHour, pMin, pSec) {
 		hour = pHour;
 		min = pMin;
