@@ -5,7 +5,12 @@
 <head>
 	
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-	<script type="text/javascript" src="scripts/scripts.js"></script>
+
+	<script type="text/javascript" src="scripts/Timer.js"></script>
+	<script type="text/javascript" src="scripts/Display.js"></script>
+	<script type="text/javascript" src="scripts/InputValidator.js"></script>
+	<script type="text/javascript" src="scripts/Clock.js"></script>
+	<script type="text/javascript" src="scripts/main.js"></script>
 	
 </head>	
 	
@@ -37,8 +42,10 @@
 	 	</p>
 	</div>
  
-	<input type="button" id="edit_time_tgl_btn" value="Edit Time" onclick="toggleEditTime()" hidden=true>
-	
+
+	<input type="button" id="edit_time_tgl_btn" value="Edit Time" onclick="c.toggleTimeMenu()" hidden=true>
+
+
 	<div id="edit_time_div">
 		<br>
 		<form id="set_time_form" display="none">
@@ -51,12 +58,12 @@
 			Set Seconds:<br>
 			<input type="text" id="input_seconds"><br><br>
 			
-			<input type="button" id="edit_time_accept_btn" value="Accept" onclick="changeTime()">
-			<input type="button" id="edit_time_clear_btn"  value="Clear" oncick="clearInputFields()" >
+			<input type="button" id="edit_time_accept_btn" value="Accept" onclick="c.setTime()">
+			<input type="button" id="edit_time_clear_btn"  value="Clear" oncick="c.clearInput()" >
 			
 		</form>
 	</div>
-	
+
 </body>
 
 </html>
