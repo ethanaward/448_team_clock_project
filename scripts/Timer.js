@@ -5,7 +5,7 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 	var sec = pSec;
 	var format = pFormat;
 	var sec_total = 0; //Default clock starts at 0:00
-	var meridiem = "am"//whether the clock is in am/pm on 12h format.
+	var meridiem = "AM"//whether the clock is in am/pm on 12h format.
 
 	//methods---------------------------------------------------------
 	this.addTime = function() {
@@ -41,7 +41,7 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 
 	this.getTime = function(){
 		//pack the time data into an array for processing in the display object.
-		return [hour, min, sec]
+		return [hour, min, sec, meridiem]
 	}
 
 	this.setFormat = function(){
