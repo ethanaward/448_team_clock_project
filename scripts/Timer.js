@@ -1,3 +1,12 @@
+/**
+ * Creates an instance of Timer.
+ *
+ * @constructor
+ * @param {number} pHours The current number of hours.
+ * @param {number} pMin The current number of minutes.
+ * @param {number} pSec The current number of seconds.
+ * @param {number} pFormat The format of the clock (12/24 hours).
+ */
 var Timer = function(pHours, pMin, pSec, pFormat){
 	//private data
 	var hour = pHours;
