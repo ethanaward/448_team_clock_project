@@ -33,9 +33,9 @@ var Clock = function(){
 	}
 
 	//sets 12/24 hour format in the Timer object
-	this.setFormat = function(){
+	this.setFormat = function(pFormat){
 		//no need to validate, so send format to timer directly
-		t.setFormat();
+		t.setFormat(pFormat);
 	}
 
 };

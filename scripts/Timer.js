@@ -44,9 +44,15 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 		return [hour, min, sec, meridiem]
 	}
 
-	this.setFormat = function(){
+	this.setFormat = function(pFormat){
+		format = pFormat;
+
+		//meridiem will not show in concatonated time string if in 24 hour format.
+		if(format == 24){
+			meridiem = "";
+		}
 		//TODO
-		//changes the format and re-calculates the output time.
+		//re-calculate the output time?
 	}
 
 	this.getFormat = function(){
