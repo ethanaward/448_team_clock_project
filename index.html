@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+	
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+	<script type="text/javascript" src="scripts/Timer.js"></script>
+	<script type="text/javascript" src="scripts/Display.js"></script>
+	<script type="text/javascript" src="scripts/InputValidator.js"></script>
+	<script type="text/javascript" src="scripts/Clock.js"></script>
+	<script type="text/javascript" src="scripts/main.js"></script>
+	
+</head>	
+	
+<body>
+ 	
+	<h1 id ="h1">
+		EECS 448 Group Clock Project<br>
+	</h1>
+	
+	
+ 	
+	<h2>
+		
+		
+		<p id="time">12:00:00 AM</p>
+		
+		
+	</h2>
+	
+	
+	<h3> 
+			Please pick initial hour formatting and set starting time.
+	</h3>
+	
+	<div id="toggle_display_type_div">
+		<p>Hour Format: 
+	 	12 Hour: <input type="radio" name="time_format" id="12H" onclick=c.setFormat(12)>
+	 	24 Hour: <input type="radio" name="time_format" id="24H" onclick=c.setFormat(24) checked=true>
+	 	</p>
+	</div>
+ 
+
+	<input type="button" id="edit_time_tgl_btn" value="Edit Time" onclick="c.toggleTimeMenu()" hidden=true>
+
+
+	<div id="edit_time_div">
+		<br>
+		<form id="set_time_form" display="none">
+			Set Hours:<br>
+			<input type="text" id="input_hours"><br><br>
+	 
+			Set Minutes:<br>
+			<input type="text" id="input_minutes"><br><br>
+	 
+			Set Seconds:<br>
+			<input type="text" id="input_seconds"><br><br>
+			
+			<input type="button" id="edit_time_accept_btn" value="Accept" onclick="c.setTime()">
+			<input type="button" id="edit_time_clear_btn"  value="Clear" oncick="c.clearInput()" >
+			
+		</form>
+	</div>
+
+</body>
+
+</html>
