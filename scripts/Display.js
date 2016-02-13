@@ -1,4 +1,5 @@
 /**
+ * Display.js
  * Creates an instance of Display.
  * @constructor
  */

@@ -1,4 +1,5 @@
 /**
+ * InputValidator.js
  * Creates an instance of InputValidator
  * @constructor
  */
