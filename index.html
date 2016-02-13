@@ -37,8 +37,10 @@
 	
 	<div id="toggle_display_type_div">
 		<p>Hour Format: 
+
 	 	12 Hour: <input type="radio" name="time_format" id="12H" onclick=c.setFormat(12) checked=true>
 	 	24 Hour: <input type="radio" name="time_format" id="24H" onclick=c.setFormat(24)>
+
 	 	</p>
 	</div>
  
@@ -62,6 +64,7 @@
 	 	AM: <input type="radio" name="set_time_format" id="am" checked=true>
 		PM: <input type="radio" name="set_time_format" id="pm">
 	 	24 Hour: <input type="radio" name="set_time_format" id="u_24H"><br><br>
+			
 			
 			<input type="button" id="edit_time_accept_btn" value="Accept" onclick="c.setTime()">
 			<input type="button" id="edit_time_clear_btn"  value="Clear" onclick="c.clearInput()" >
