@@ -1,6 +1,12 @@
+/**
+ * Creates an instance of InputValidator
+ * @constructor
+ */
 var InputValidator = function(){
 
-	//Toggles the visibility of the edit_time_div and the text on the button.
+	/**
+	 * Toggles the visibility of the edit_time_div and the text on the button.
+	 */
 	this.toggleTimeMenu = function(){
 		var div = document.getElementById('edit_time_div');
 	    if (div.hidden !== true) {
@@ -11,15 +17,23 @@ var InputValidator = function(){
 	    }
 	}
 
+	/**
+	 * Clears the input fields of the html form for time entry
+	 */
 	this.clearInput = function(){
-		//TODO
-		//clears all the input fields for time entry.
+		
 	}
 
+	/**
+	 * checks the validity of the input.
+	 * passes valid input to the time obj t. 
+	 * displays a message if the input is invalid
+	 * 
+	 * @param {Timer} timerObj. An instance of Timer.js that sets the time
+	 * and keeps track of it
+	 */ 
 	this.setTime = function(timerObj){
-		//validates the input is good with given format.
-		//passes valid input to timer obj t.
-		//if input is invalid, send message to display.
+		
 
 		//TODO are these needed? 
 		document.getElementById("edit_time_tgl_btn").hidden = false;
