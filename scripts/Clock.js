@@ -1,4 +1,5 @@
 /**
+ * Clock.js
  * Creates an instance of Clock.
  * @constructor
  */
