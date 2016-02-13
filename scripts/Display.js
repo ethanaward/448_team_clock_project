@@ -38,5 +38,16 @@ var Display = function(){
 
 		return number_to_check
 	}
+	
+	
+	this.clearInput = function(){
+		
+		//clears all the input fields for time entry.
+		
+		document.getElementById("input_hours"  ).value = "";
+		document.getElementById("input_minutes").value = "";
+		document.getElementById("input_seconds").value = "";
+		
+	}
 
 };

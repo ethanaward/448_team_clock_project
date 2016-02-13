@@ -11,10 +11,6 @@ var InputValidator = function(){
 	    }
 	}
 
-	this.clearInput = function(){
-		//TODO
-		//clears all the input fields for time entry.
-	}
 
 	this.setTime = function(timerObj){
 		//validates the input is good with given format.

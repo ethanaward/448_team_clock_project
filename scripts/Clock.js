@@ -29,7 +29,7 @@ var Clock = function(){
 
 	//clears the input fields
 	this.clearInput = function(){
-		i.clearInput();
+		d.clearInput();
 	}
 
 	//sets 12/24 hour format in the Timer object
