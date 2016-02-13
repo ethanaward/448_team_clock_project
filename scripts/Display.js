@@ -3,7 +3,7 @@
  * @constructor
  */
 var Display = function(){
-
+var military_time = true; //initialize display to military time
 	/**
 	 * Concatenates a string of the time with colons
 	 * and displays it on the html page "time" id.
@@ -16,9 +16,18 @@ var Display = function(){
 		document.getElementById("time").innerHTML = this.checkNumber(timeArr[0]) + ":" + 
 													this.checkNumber(timeArr[1]) + ":" + 
 													this.checkNumber(timeArr[2]) + " " +
-													timeArr[3];
+													timeArr[3] + military_time;
 	}
-
+	//Toggles the visibility of the edit_time_div and the text on the button.
+	this.toggleTimeMenu = function(){
+		var div = document.getElementById('edit_time_div');
+	    if (div.hidden !== true) {
+	        div.hidden = true;
+	    }
+	    else {
+	        div.hidden = false;
+	    }
+	}
 	/**
 	 * Writes error messages when the edit time input is invalid.
 	 */
@@ -47,6 +56,13 @@ var Display = function(){
 		document.getElementById("input_hours"  ).value = "";
 		document.getElementById("input_minutes").value = "";
 		document.getElementById("input_seconds").value = "";
+		
+	}
+	
+	this.setFormat = function(pFormat)
+	{
+		alert("D.setformatcalled" + pFormat);
+		this.military_time = pFormat;
 		
 	}
 

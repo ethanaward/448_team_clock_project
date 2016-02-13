@@ -1,15 +1,6 @@
 var InputValidator = function(){
 
-	//Toggles the visibility of the edit_time_div and the text on the button.
-	this.toggleTimeMenu = function(){
-		var div = document.getElementById('edit_time_div');
-	    if (div.hidden !== true) {
-	        div.hidden = true;
-	    }
-	    else {
-	        div.hidden = false;
-	    }
-	}
+
 
 
 	this.setTime = function(timerObj){

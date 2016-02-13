@@ -1,0 +1,35 @@
+this.displayTime = function(timeArr){
+		if(this.display_type == 24)
+		{
+		document.getElementById("time").innerHTML = this.checkNumber(timeArr[0]) + ":" + 
+													this.checkNumber(timeArr[1]) + ":" + 
+													this.checkNumber(timeArr[2]) + " " +
+													timeArr[3];
+		}
+		else
+		{
+			//make these methods
+			if(this.timeArr[0] > 12)
+			{
+				document.getElementById("time").innerHTML = this.checkNumber(timeArr[0]) - 12 + ":" + 
+															this.checkNumber(timeArr[1]) + ":" + 
+															this.checkNumber(timeArr[2]) + " " +
+															timeArr[3] + " PM";
+			}
+			else if(this.timeArr[0] == 24)
+			{
+				document.getElementById("time").innerHTML = this.checkNumber(timeArr[0]) - 12 + ":" + 
+													this.checkNumber(timeArr[1]) + ":" + 
+													this.checkNumber(timeArr[2]) + " " +
+													timeArr[3] + " AM";	
+			}
+			else
+			{
+									document.getElementById("time").innerHTML = this.checkNumber(timeArr[0]) + ":" + 
+													this.checkNumber(timeArr[1]) + ":" + 
+													this.checkNumber(timeArr[2]) + " " +
+													timeArr[3] + " AM";
+			}
+		}
+		
+	}

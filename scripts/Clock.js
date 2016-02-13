@@ -18,7 +18,7 @@ var Clock = function(){
 
 	//make the menu toggle when the editTime key is pressed
 	this.toggleTimeMenu = function(){
-		i.toggleTimeMenu();
+		d.toggleTimeMenu();
 	}
 
 	//validates the input time and sends it to the timer
@@ -35,7 +35,9 @@ var Clock = function(){
 	//sets 12/24 hour format in the Timer object
 	this.setFormat = function(pFormat){
 		//no need to validate, so send format to timer directly
-		t.setFormat(pFormat);
+		alert("c.setformat called" + pFormat);
+		d.setFormat(pFormat);
+		this.setTime();
 	}
 
 };
