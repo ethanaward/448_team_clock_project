@@ -1,4 +1,10 @@
-//main driver for the webpage (must be last js file included)
+/**
+ * main.js
+ * main driver for the webpage (must be last js file included)
+ * creates a new instance of clock
+ * initializes the clock instance
+ * calls the method to update the clock ever 1s. 
+ */ 
 function main(){
 	c = new Clock();
 	c.init();
