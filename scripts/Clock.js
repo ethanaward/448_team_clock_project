@@ -1,3 +1,7 @@
+/**
+ * Creates an instance of Clock.
+ * @constructor
+ */
 var Clock = function(){
 	//private data
 	var i = new InputValidator();
@@ -5,39 +9,59 @@ var Clock = function(){
 	var t = new Timer(12, 0, 0, 12);
 
 	//methods------------------------------------------
-	//initialization for the class
+	/**
+	 * Initializes clock
+	 * @this {clock}
+	 */ 
 	this.init = function(){
 		t.init();
 	}
 
-	//update loop that runs each 1s update
+	/**
+	 * update loop that runs every 1s
+	 * increments the time by 1s and displays it
+	 */ 
 	this.update = function(){
 		t.addTime();
 		d.displayTime(t.getTime());
 	}
 
-	//make the menu toggle when the editTime key is pressed
+	/**
+	 * makes the set time menu toggle whenever the edit time button is clicked
+	 */
 	this.toggleTimeMenu = function(){
 		i.toggleTimeMenu();
 	}
 
-	//validates the input time and sends it to the timer
+	/**
+	 * validates the input received for the time by calling the Input Validator 
+	 * If the input is valid, it is passed to the timer object. 
+	 * Invalid input will trigger an alert message
+	 */
 	this.setTime = function(){
-		//validates time and passes it to the timer obj t
+		
 		i.setTime(t);
 	}
 
-	//clears the input fields
+	/**
+	 * clears the input fields when the 'Clear' button is pressed
+	 */
 	this.clearInput = function(){
 		i.clearInput();
 	}
 
-	//sets 12/24 hour format in the Timer object
+	/**
+	 * sets the format of the clock to either 12 hour or 24 hour
+	 * @param {number} pFormat. The format of the clock. 12 or 24 are the only possibilities
+	 */
 	this.setFormat = function(pFormat){
-		//no need to validate, so send format to timer directly
 		t.setFormat(pFormat);
 	}
 	
+	/**
+	 * sets AM/PM for 12 hour mode
+	 * @param {string} pMeridiem. Designates AM/PM for 12 hour mode. 
+	 */
 	this.setMeridiem = function(pMeridiem){
 		t.setMeridiem(pMeridiem);
 	}
