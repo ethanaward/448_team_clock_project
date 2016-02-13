@@ -37,5 +37,9 @@ var Clock = function(){
 		//no need to validate, so send format to timer directly
 		t.setFormat(pFormat);
 	}
+	
+	this.setMeridiem = function(pMeridiem){
+		t.setMeridiem(pMeridiem);
+	}
 
 };
