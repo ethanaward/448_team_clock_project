@@ -61,9 +61,9 @@
 			<input type="text" id="input_seconds"><br><br>
 
 			Set Hour Format:<br>
-	 	AM: <input type="radio" name="set_time_format" id="am" onclick="c.setMeridiem(AM)" checked=true>
-		PM: <input type="radio" name="set_time_format" id="pm" onclick="c.setMeridiem(PM)">
-	 	24 Hour: <input type="radio" name="set_time_format" id="u_24H" onclick="c.setMeridiem("")"><br><br>
+	 	AM: <input type="radio" name="set_time_format" id="am" onclick=c.setMeridiem("AM")checked=true>
+		PM: <input type="radio" name="set_time_format" id="pm" onclick=c.setMeridiem("PM")>
+	 	24 Hour: <input type="radio" name="set_time_format" id="u_24H" onclick=c.setMeridiem("")><br><br>
 			
 			
 			<input type="button" id="edit_time_accept_btn" value="Accept" onclick="c.setTime()">
