@@ -8,6 +8,13 @@
  * @param {number} pMin The current number of minutes.
  * @param {number} pSec The current number of seconds.
  * @param {number} pFormat The format of the clock (12/24 hours).
+ *
+ * @property {number} hour The current number of hours.
+ * @property {number} min The current number of minutes.
+ * @property {number} sec The current number of seconds.
+ * @property {number} format The format of the clock (12/24 hours).
+ * @property {number} sec_total The time in terms of total seconds.
+ * @property {string} meridiem AM/PM time setting for the 12 hour format.
  */
 var Timer = function(pHours, pMin, pSec, pFormat){
 	//private data
@@ -15,16 +22,15 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 	var min = pMin;
 	var sec = pSec;
 	var format = pFormat;
-	var sec_total = 0; //Default clock starts at 0:00
-	var meridiem = "AM"; //whether the clock is in am/pm on 12h format.
+	var sec_total = 0;
+	var meridiem = "AM";
 
 	//methods---------------------------------------------------------
 	/**
-	 * calculates the hours, minutes, and seconds
-	 * increments the time
-	 * makes the clock at 24:00
+	 * Calculates the hours, minutes, and seconds
+	 * increments the time and
+	 * makes the clock roll over at 24:00
 	 */
-	 
 	this.addTime = function() {
 		var h_remainder = sec_total%(60*60); //remainder seconds after dividing to get hours from sec_total
 		var m_remainder = h_remainder%(60); //remainder seconds after dividing to get mins
@@ -41,25 +47,27 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 	 	else 
 	 		sec_total = 0;
 	}
+
 	/**
-	 * calculates total seconds before addTime() resets it to 0 before the first time increment
+	 * Initializes the Timer object by calculating the total seconds 
+	 * before addTime() resets it to 0 on its first call.
 	 */
 	this.init = function(){
-		
 		sec_total = hour*(60*60) + min*(60) + sec;
 	}
+
 	/**
-	 * sets the time
-	 * @param {number} pHour. The number of hours.
+	 * Sets the time.
+	 *
+	 * @param {number} pHour The number of hours.
 	 * 1-12 are the accepted values for 12 hour mode
 	 * 0-23 are accepted values for 24 hour mode. 
 	 * 
-	 * @param {number} pMin. The number of minutes. 
+	 * @param {number} pMin The number of minutes. 
 	 * 0-59 are accepted values. 
 	 * 
-	 * @param {number} pSec. The number of seconds.
+	 * @param {number} pSec The number of seconds.
 	 * 0-59 are accepted values. 
-	 * 
 	 */
 	this.setTime = function(pHour, pMin, pSec) {
 		hour = pHour;
@@ -67,24 +75,23 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 		sec = pSec;
 
 		//calculate the total seconds
-	 	sec_total = sec*1 +min*60+hour*60*60; //Turn time user entered into total seconds
+	 	sec_total = sec*1 +min*60+hour*60*60;
 	}
 	
 	/**
-	 * puts the hour, min, sec, and meridiem data into an array for processing in
-	 * the display object. 
+	 * Returns the time data packed into an array.
 	 * 
-	 * @return {Array} [hour, min, sec, meridiem].
+	 * @return {array} [hour, min, sec, meridiem]
 	 * the values for hour, min, sec, and meridiem. 
-	 * 
 	 */ 
 	this.getTime = function(){
-		
-		return [hour, min, sec, meridiem]
+		return [hour, min, sec, meridiem];
 	}
+
 	/** 
-	 * sets the format. 
-	 * @param {number} pFormat. Sets the format to either 12 or 24 hour. 
+	 * Sets the format.
+	 *
+	 * @param {number} pFormat Sets the format to either 12 or 24 hour. 
 	 * 12 and 24 are the accepted values.
 	 */
 	this.setFormat = function(pFormat){
@@ -97,20 +104,20 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 		//TODO
 		//re-calculate the output time?
 	}
+
 	/**
-	 * @return {number} format. the format of the clock for i and display to use.
-	 * 
+	 * Returns the format the clock is in.
+	 *
+	 * @return {number} format the format of the clock for i and display to use.
 	 */ 
 	this.getFormat = function(){
-	
 		return format; 
 	}
 
 	/**
-	 * sets the Meridiem. 
+	 * Sets the Meridiem. 
 	 * 
-	 * @param {String} pMeridiem. AM or PM for 12-hour format, or none for 24 Hour format.
-	 * 
+	 * @param {String} pMeridiem AM or PM for 12-hour format, or none for 24 Hour format.
 	 */ 
 	this.setMeridiem = function(pMeridiem)
 	{
@@ -118,12 +125,13 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 	}
 	
 	/**
-	 * @return {string} meridiem. AM or PM for 12-hour format, or none for 24 Hour format.
+	 * Returns the meridiem.
+	 *
+	 * @return {string} meridiem AM or PM for 12-hour format, or none for 24 Hour format.
 	 */ 
 	this.getMeridiem = function()
 	{
 		return meridiem;
-	
 	}
 	
 };
