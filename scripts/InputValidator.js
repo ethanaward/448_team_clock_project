@@ -39,7 +39,23 @@ var InputValidator = function(){
 		var m = document.getElementById("input_minutes").value;
 		var s = document.getElementById("input_seconds").value;
 
-		if((s<60) && (m<60) && (h<24))
+		if(isNaN(s)==true||s<0||s>59||s%1!=0) //If sec is not a whole number from 0 to 59
+		{
+			window.alert("Please input a whole number from 0 to 59 for sec.");
+		}
+		else if(isNaN(m)==true||m<0||m>59||m%1!=0) //If min is not a whole number from 0 to 59
+		{
+			window.alert("Please input a whole number from 0 to 59 for min.");
+		}
+		else if((document.getElementById("u_24H").checked == true)&&(isNaN(h)==true||h<0||h>23||h%1!=0)) //If hour is not a whole number from 0 to 23 for 24 hour format
+		{
+			window.alert("Please input a whole number hour from 0 to 23 for 24 hour format.");
+		}
+		else if((document.getElementById("u_24H").checked == false)&&(isNaN(h)==true||h<1||h>12||h%1!=0)) //If hour is not a whole number from 1 to 12 for 12 hour format
+		{
+			window.alert("Please input a whole number hour from 1 to 12 for am/pm format.");
+		}		
+		else
 	 	{	
 	 		//input was valid so set the time in the timer object.
 			if(document.getElementById("pm").checked == true)
@@ -66,11 +82,6 @@ var InputValidator = function(){
 				document.getElementById("24H").checked = true; //Check 24 hour format button
 			}
 	 		timerObj.setTime(h, m, s);
-	 	}
-	 	else
-	 	{	
-	 		//TODO use the display object to output errors
-	 		alert("invalid input"); //Add more error handle
 	 	}
 	}
 };
