@@ -58,33 +58,35 @@ var InputValidator = function(){
 			strmsg += "\nInvalid hours, must be integer between 0 and 12";
 		}		
 
-		else
-	 	{	
-	 		//input was valid so set the time in the timer object.
-			if(document.getElementById("pm").checked == true)
+		else 
+	 	{	if(m>=0 && m<60 && isNaN(m)==false && m%1==0 && s>=0 && s<60 && isNaN(s)==false && s%1==0) // necessary
 			{
-				timerObj.setFormat(12); //Tell addTime to use am/pm
-				document.getElementById("12H").checked = true; //Check 12 hour format button
-				if(h!=12) //Add 12 hours to sec_total for pm unless 12 pm
+	 			//input was valid so set the time in the timer object.
+				if(document.getElementById("pm").checked == true)
 				{
-					h=h*1+12; //*1 is so it won't concatenate
+					timerObj.setFormat(12); //Tell addTime to use am/pm
+					document.getElementById("12H").checked = true; //Check 12 hour format button
+					if(h!=12) //Add 12 hours to sec_total for pm unless 12 pm
+					{
+						h=h*1+12; //*1 is so it won't concatenate
+					}
 				}
-			}
-			else if(document.getElementById("am").checked == true)
-			{
-				timerObj.setFormat(12); //Tell addTime to use am/pm
-				document.getElementById("12H").checked = true; //Check 12 hour format button
-				if(h==12) //Change hours to 0 if 12 am
+				else if(document.getElementById("am").checked == true)
 				{
-					h = 0;
+					timerObj.setFormat(12); //Tell addTime to use am/pm
+					document.getElementById("12H").checked = true; //Check 12 hour format button
+					if(h==12) //Change hours to 0 if 12 am
+					{
+						h = 0;
+					}
 				}
+				else
+				{
+					timerObj.setFormat(24); //Tell addTime to use 24 hour
+					document.getElementById("24H").checked = true; //Check 24 hour format button
+				}
+	 			timerObj.setTime(h, m, s);
 			}
-			else
-			{
-				timerObj.setFormat(24); //Tell addTime to use 24 hour
-				document.getElementById("24H").checked = true; //Check 24 hour format button
-			}
-	 		timerObj.setTime(h, m, s);
 	 	}
 		if(strmsg.length > 0)
 		{
