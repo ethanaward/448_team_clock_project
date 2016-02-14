@@ -1,4 +1,11 @@
-//main driver for the webpage (must be last js file included)
+/**
+ * main.js
+ *
+ * Main driver for the webpage.
+ * It reates a new instance of clock,
+ * initializes the clock instance, and calls the 
+ * Clocks update method to update the clock every second. 
+ */ 
 function main(){
 	c = new Clock();
 	c.init();
@@ -7,5 +14,5 @@ function main(){
 	var intervalID = window.setInterval(c.update, 1000);
 };
 
-//calls main when the script is seen by the js interpreter.
+//calls main when the script is interpreted.
 main();

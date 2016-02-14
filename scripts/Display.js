@@ -1,5 +1,8 @@
 /**
+ * Display.js
+ *
  * Creates an instance of Display.
+ *
  * @constructor
  */
 var Display = function(){
@@ -29,6 +32,7 @@ var Display = function(){
 
 	/**
 	 * Pads the number with a 0 on the left hand side if it is a single digit.
+	 *
 	 * @param {number} number_to_check The digit to pad.
 	 * @return {string} The padded number.
 	 */
@@ -39,15 +43,13 @@ var Display = function(){
 		return number_to_check
 	}
 	
-	
+	/**
+	 * Clears the input fields of the html form for time entry.
+	 */
 	this.clearInput = function(){
-		
-		//clears all the input fields for time entry.
-		
 		document.getElementById("input_hours"  ).value = "";
 		document.getElementById("input_minutes").value = "";
-		document.getElementById("input_seconds").value = "";
-		
+		document.getElementById("input_seconds").value = "";	
 	}
 
 };
