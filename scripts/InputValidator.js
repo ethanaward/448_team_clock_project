@@ -1,6 +1,8 @@
 /**
  * InputValidator.js
- * Creates an instance of InputValidator
+ *
+ * Creates an instance of InputValidator.
+ *
  * @constructor
  */
 var InputValidator = function(){
@@ -19,19 +21,20 @@ var InputValidator = function(){
 	}
 
 	/**
-	 * Clears the input fields of the html form for time entry
+	 * Clears the input fields of the html form for time entry.
 	 */
 	this.clearInput = function(){
-		
+		//TODO
+		//does this still belong here?
 	}
 
 	/**
-	 * checks the validity of the input.
-	 * passes valid input to the time obj t. 
-	 * displays a message if the input is invalid
+	 * Checks the validity of the input.
+	 * It passes valid input to the Timer timerObj,
+	 * or displays a message if the input is invalid.
 	 * 
-	 * @param {Timer} timerObj. An instance of Timer.js that sets the time
-	 * and keeps track of it
+	 * @param {Timer} timerObj An instance of the Timer class
+	 * that sets the time and keeps track of it.
 	 */ 
 	this.setTime = function(timerObj){
 		
