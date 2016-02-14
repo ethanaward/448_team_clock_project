@@ -1,6 +1,8 @@
 /**
  * Display.js
+ *
  * Creates an instance of Display.
+ *
  * @constructor
  */
 var Display = function(){
@@ -30,6 +32,7 @@ var Display = function(){
 
 	/**
 	 * Pads the number with a 0 on the left hand side if it is a single digit.
+	 *
 	 * @param {number} number_to_check The digit to pad.
 	 * @return {string} The padded number.
 	 */
