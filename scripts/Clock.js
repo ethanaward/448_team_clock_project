@@ -1,70 +1,76 @@
 /**
  * Clock.js
+ *
  * Creates an instance of Clock.
+ *
  * @constructor
+ * @property {InputValidator} input The object that handles 
+ * input and validation for the clock.
+ * @property {Display} display The object that handles output for the clock.
+ * @property {Timer} time The object that handles keeping and 
+ * updating time for the clock.
  */
 var Clock = function(){
 	//private data
-	var i = new InputValidator();
-	var d = new Display();
-	var t = new Timer(12, 0, 0, 12);
+	var input = new InputValidator();
+	var display = new Display();
+	var time = new Timer(12, 0, 0, 12);
 
 	//methods------------------------------------------
 	/**
-	 * Initializes clock
-	 * @this {clock}
+	 * Initializes Clock object.
 	 */ 
 	this.init = function(){
-		t.init();
+		time.init();
 	}
 
 	/**
-	 * update loop that runs every 1s
-	 * increments the time by 1s and displays it
+	 * Increments the time by 1 second and displays it.
 	 */ 
 	this.update = function(){
-		t.addTime();
-		d.displayTime(t.getTime());
+		time.addTime();
+		display.displayTime(time.getTime());
 	}
 
 	/**
-	 * makes the set time menu toggle whenever the edit time button is clicked
+	 * Toggles the edit time menu displaying.
 	 */
 	this.toggleTimeMenu = function(){
-		i.toggleTimeMenu();
+		input.toggleTimeMenu();
 	}
 
 	/**
-	 * validates the input received for the time by calling the Input Validator 
+	 * Validates the input received for the time by calling the Input Validator 
 	 * If the input is valid, it is passed to the timer object. 
-	 * Invalid input will trigger an alert message
+	 * Invalid input will trigger an alert message.
 	 */
 	this.setTime = function(){
-		
-		i.setTime(t);
+		input.setTime(time);
 	}
 
 	/**
-	 * clears the input fields when the 'Clear' button is pressed
+	 * Clears the input fields when the 'Clear' button is pressed.
 	 */
 	this.clearInput = function(){
-		i.clearInput();
+		input.clearInput();
 	}
 
 	/**
-	 * sets the format of the clock to either 12 hour or 24 hour
-	 * @param {number} pFormat. The format of the clock. 12 or 24 are the only possibilities
+	 * Sets the format of the clock to either 12 hour or 24 hour.
+	 *
+	 * @param {number} pFormat The format of the clock. 12 or 24 are the only possibilities.
 	 */
 	this.setFormat = function(pFormat){
-		t.setFormat(pFormat);
+		time.setFormat(pFormat);
 	}
 	
 	/**
-	 * sets AM/PM for 12 hour mode
-	 * @param {string} pMeridiem. Designates AM/PM for 12 hour mode. 
+	 * Sets AM/PM for 12 hour mode.
+	 *
+	 * @param {string} pMeridiem Designates AM/PM for 12 hour mode. 
 	 */
 	this.setMeridiem = function(pMeridiem){
-		t.setMeridiem(pMeridiem);
+		time.setMeridiem(pMeridiem);
 	}
 
 };
