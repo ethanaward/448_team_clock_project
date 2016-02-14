@@ -38,6 +38,28 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 		hour = (sec_total - h_remainder)/(60*60); //Get whole number of hours
 		min = (h_remainder-m_remainder)/60; //Get whole number of minutes
 		sec = m_remainder; //Get seconds
+
+		if(format == 12)
+		{
+			if(hour > 12)
+			{	
+				hour = hour*1 - 12; //Subtract 12 hours for pm
+				meridiem = "PM"; //PM
+			}
+			else if(hour == 12)
+			{
+				meridiem = "PM"; //Change am to pm at noon
+			}
+			else if(hour == 0)
+			{
+				hour = 12; //Change midnight to 12
+				meridiem = "AM";
+			}
+			else
+			{
+				meridiem = "AM";
+			}
+		}
 		
 		//time increment logic
 		if(sec_total < 86400 -1) // make clock restart at 24:00 hr -- instead of displaying 24:00 show 0:00
@@ -45,7 +67,9 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 	 		sec_total += 1; //Increase time by 1 sec
 	 	}
 	 	else 
+		{
 	 		sec_total = 0;
+		}	
 	}
 
 	/**
