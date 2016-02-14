@@ -42,6 +42,26 @@ var InputValidator = function(){
 		if((s<60) && (m<60) && (h<24))
 	 	{	
 	 		//input was valid so set the time in the timer object.
+			if(document.getElementById("pm").checked == true)
+			{
+				timerObj.setFormat(12); //Tell addTime to use am/pm
+				if(h!=12) //Add 12 hours to sec_total for pm unless 12 pm
+				{
+					h=h*1+12; //*1 is so it won't concatenate
+				}
+			}
+			else if(document.getElementById("am").checked == true)
+			{
+				timerObj.setFormat(12); //Tell addTime to use am/pm
+				if(h==12) //Change hours to 0 if 12 am
+				{
+					h = 0;
+				}
+			}
+			else
+			{
+				timerObj.setFormat(24); //Tell addTime to use 24 hour
+			}
 	 		timerObj.setTime(h, m, s);
 	 	}
 	 	else
