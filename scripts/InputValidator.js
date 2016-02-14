@@ -45,6 +45,7 @@ var InputValidator = function(){
 			if(document.getElementById("pm").checked == true)
 			{
 				timerObj.setFormat(12); //Tell addTime to use am/pm
+				document.getElementById("12H").checked = true; //Check 12 hour format button
 				if(h!=12) //Add 12 hours to sec_total for pm unless 12 pm
 				{
 					h=h*1+12; //*1 is so it won't concatenate
@@ -53,6 +54,7 @@ var InputValidator = function(){
 			else if(document.getElementById("am").checked == true)
 			{
 				timerObj.setFormat(12); //Tell addTime to use am/pm
+				document.getElementById("12H").checked = true; //Check 12 hour format button
 				if(h==12) //Change hours to 0 if 12 am
 				{
 					h = 0;
@@ -61,6 +63,7 @@ var InputValidator = function(){
 			else
 			{
 				timerObj.setFormat(24); //Tell addTime to use 24 hour
+				document.getElementById("24H").checked = true; //Check 24 hour format button
 			}
 	 		timerObj.setTime(h, m, s);
 	 	}
