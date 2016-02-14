@@ -55,7 +55,7 @@ var InputValidator = function(){
 		}
 		else if((document.getElementById("u_24H").checked == false)&&(isNaN(h)==true||h<1||h>12||h%1!=0)) //If hour is not a whole number from 1 to 12 for 12 hour format
 		{
-			strmsg += "\nInvalid hours, must be integer between 0 and 12";
+			strmsg += "\nInvalid hours, must be integer between 1 and 12";
 		}		
 
 		else 
