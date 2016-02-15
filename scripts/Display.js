@@ -23,14 +23,6 @@ var Display = function(){
 	}
 
 	/**
-	 * Writes error messages when the edit time input is invalid.
-	 */
-	this.displayErrorMsg = function(){
-		//TODO
-		//prints error messages at designated tags for invalid input.
-	}
-
-	/**
 	 * Pads the number with a 0 on the left hand side if it is a single digit.
 	 *
 	 * @param {number} number_to_check The digit to pad.

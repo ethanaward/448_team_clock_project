@@ -29,9 +29,6 @@ var InputValidator = function(){
 	 * that sets the time and keeps track of it.
 	 */ 
 	this.setTime = function(timerObj){
-		
-
-		//TODO are these needed? 
 		document.getElementById("edit_time_tgl_btn").hidden = false;
 		document.getElementById('edit_time_div').hidden = true;
 

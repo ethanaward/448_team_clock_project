@@ -125,8 +125,6 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 		if(format == 24){
 			meridiem = "";
 		}
-		//TODO
-		//re-calculate the output time?
 	}
 
 	/**
