@@ -31,7 +31,8 @@ var InputValidator = function(){
 	this.setTime = function(timerObj){
 		document.getElementById("edit_time_tgl_btn").hidden = false;
 		document.getElementById('edit_time_div').hidden = true;
-
+		var mo = document.getElementById("input_month").value;
+		var d = document.getElementById("input_day").value;
 		var h = document.getElementById("input_hours").value;
 		var m = document.getElementById("input_minutes").value;
 		var s = document.getElementById("input_seconds").value;
@@ -82,7 +83,7 @@ var InputValidator = function(){
 					timerObj.setFormat(24); //Tell addTime to use 24 hour
 					document.getElementById("24H").checked = true; //Check 24 hour format button
 				}
-	 			timerObj.setTime(h, m, s);
+	 			timerObj.setTime(mo, d, h, m, s);
 			}
 	 	}
 		if(strmsg.length > 0)
