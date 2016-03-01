@@ -95,9 +95,9 @@ var Timer = function(pMonth, pDay, pHours, pMin, pSec, pFormat){
 	 * @param {number} pSec The number of seconds.
 	 * 0-59 are accepted values. 
 	 */
-	this.setTime = function(pHour, pMin, pSec) {
-		//month = pMonth;
-		//day = pDay;
+	this.setTime = function(pMonth, pDay, pHour, pMin, pSec) {
+		month = pMonth;
+		day = pDay;
 		hour = pHour;
 		min = pMin;
 		sec = pSec;
