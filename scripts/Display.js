@@ -39,6 +39,8 @@ var Display = function(){
 	 * Clears the input fields of the html form for time entry.
 	 */
 	this.clearInput = function(){
+		document.getElementById("input_month"  ).value = "";
+		document.getElementById("input_day"  ).value = "";
 		document.getElementById("input_hours"  ).value = "";
 		document.getElementById("input_minutes").value = "";
 		document.getElementById("input_seconds").value = "";	
