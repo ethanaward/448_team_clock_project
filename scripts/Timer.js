@@ -16,8 +16,10 @@
  * @property {number} sec_total The time in terms of total seconds.
  * @property {string} meridiem AM/PM time setting for the 12 hour format.
  */
-var Timer = function(pHours, pMin, pSec, pFormat){
+var Timer = function(pMonth, pDay, pHours, pMin, pSec, pFormat){
 	//private data
+	var month = pMonth;
+	var day = pDay;
 	var hour = pHours;
 	var min = pMin;
 	var sec = pSec;
@@ -93,7 +95,9 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 	 * @param {number} pSec The number of seconds.
 	 * 0-59 are accepted values. 
 	 */
-	this.setTime = function(pHour, pMin, pSec) {
+	this.setTime = function(pMonth, pDay, pHour, pMin, pSec) {
+		month = pMonth;
+		day = pDay;
 		hour = pHour;
 		min = pMin;
 		sec = pSec;
@@ -109,7 +113,7 @@ var Timer = function(pHours, pMin, pSec, pFormat){
 	 * the values for hour, min, sec, and meridiem. 
 	 */ 
 	this.getTime = function(){
-		return [hour, min, sec, meridiem];
+		return [month, day, hour, min, sec, meridiem];
 	}
 
 	/** 
