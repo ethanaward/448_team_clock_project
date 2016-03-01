@@ -16,10 +16,10 @@
  * @property {number} sec_total The time in terms of total seconds.
  * @property {string} meridiem AM/PM time setting for the 12 hour format.
  */
-var Timer = function(pHours, pMin, pSec, pFormat){
+var Timer = function(pMonth, pDay, pHours, pMin, pSec, pFormat){
 	//private data
-	//var month = pMonth;
-	//var day = pDay;
+	var month = pMonth;
+	var day = pDay;
 	var hour = pHours;
 	var min = pMin;
 	var sec = pSec;
