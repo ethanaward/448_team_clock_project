@@ -14,7 +14,7 @@ var Clock = function(){
 	//private data
 	var input = new InputValidator();
 	var display = new Display();
-	var time = new Timer(0, 0, 0, 12);
+	var time = new Timer(0,0, 0, 0, 0, 12);
 
 	//methods------------------------------------------
 	/**
