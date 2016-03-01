@@ -16,9 +16,12 @@ var Display = function(){
 	 * the Timer class with indicies [hour, min, sec, meridiem].
 	 */
 	this.displayTime = function(timeArr){
-		document.getElementById("time").innerHTML = this.checkNumber(timeArr[0]) + ":" + 
+		document.getElementById("time").innerHTML = this.checkNumber(timeArr[4]) + ":" +
+
+this.checkNumber(timeArr[5]) + " " + this.checkNumber(timeArr[0]) + ":" + 
 													this.checkNumber(timeArr[1]) + ":" + 
 													this.checkNumber(timeArr[2]) + " " +
+
 													timeArr[3];
 	}
 
