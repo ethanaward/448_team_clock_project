@@ -113,7 +113,7 @@ var Timer = function(pMonth, pDay, pHours, pMin, pSec, pFormat){
 	 * the values for hour, min, sec, and meridiem. 
 	 */ 
 	this.getTime = function(){
-		return [hour, min, sec, meridiem];
+		return [hour, min, sec, meridiem, month, day];
 	}
 
 	/** 
