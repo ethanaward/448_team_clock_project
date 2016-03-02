@@ -11,13 +11,14 @@
 	<script type="text/javascript" src="scripts/InputValidator.js"></script>
 	<script type="text/javascript" src="scripts/Clock.js"></script>
 	<script type="text/javascript" src="scripts/main.js"></script>
+	<script type="text/javascript" src="scripts/ChangeFont.js"></script>
 
 	<title>Super Slick 448 Clock</title>
-	<meta name = "author" content = "Alex, Andrew, Dillon, Rusty, Sierra"/>
+	<meta name = "author" content = "Alex, An	drew, Dillon, Rusty, Sierra"/>
 	
 </head>	
 	
-<body>
+<body onload = "initialFont()">
  	
 	<h1 id ="h1">
 		EECS 448 Group Clock Project<br>
@@ -75,6 +76,8 @@
 			
 			<input type="button" id="edit_time_accept_btn" value="Accept" onclick="c.setTime()">
 			<input type="button" id="edit_time_clear_btn"  value="Clear" onclick="c.clearInput()" >
+			<input type="button" id="font_increase" value="Increase Font" onclick="increaseFont()">
+			<input type="button" id="font_decrease" value="Decrease Font" onclick="decreaseFont()">
 			
 		</form>
 	</div>
