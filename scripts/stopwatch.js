@@ -3,45 +3,54 @@ var flag;
 var timeStamp;
 
 function startWatch() {
-	
+
 	flag = true;
 	timeDate = new Date();
-	
-	//for some reason a new Date(0) has 18 hours exactly, so I subtract those milliseconds off.
-	var originalDisplay = new Date(-64800000);
+	timeStamp = -64800000;
+
+	//For some reason, a new Date(0) has 18 hours exactly, so I subtract those milliseconds off.
+	var originalDisplay = new Date(timeStamp);
 
 	OutputTimer(originalDisplay);
 
-	RunWatch(0);
+	RunWatch();
 }
 
-function RunWatch(startTime) {
+function RunWatch() {
 
 	if(flag){
 		var newDate = new Date();
-		var countUp = newDate.getTime() - timeDate.getTime() + startTime;
-		var newDisplay = new Date(countUp-64800000);
+
+		var countUp = newDate.getTime() - timeDate.getTime();
+		var newDisplay = new Date(timeStamp + countUp);
 
 		OutputTimer(newDisplay);
 		setTimeout(RunWatch, 1000);
 	}
 	else{
 		var timeStampDate = new Date();
-		timeStamp = timeStampDate.getTime()-timeDate-getTime();
+		timeStamp += timeStampDate.getTime()-timeDate.getTime();
 	}
+
 }
 
 function pauseWatch(){
 	flag = false;
 }
+
 function resumeWatch(){
 	flag = true;
-	RunWatch(timeStamp);
+	RunWatch();
 }
+
 function resetWatch(){
+	flag = false;
+	timeDate = new Date();
+	timeStamp = -64800000;
 
+	var originalDisplay = new Date(timeStamp);
+	OutputTimer(originalDisplay);
 }
-
 
 function OutputTimer(countDate){
 
