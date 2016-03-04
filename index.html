@@ -14,6 +14,7 @@
 	<script type="text/javascript" src="scripts/ChangeFont.js"></script>
 	<script type="text/javascript" src="scripts/ChangeDisplay.js"></script>
 	<script type="text/javascript" src="scripts/NewTimer.js"></script>
+	<script type="text/javascript" src="scripts/stopwatch.js"></script>
 	<title>Super Slick 448 Clock</title>
 	<meta name = "author" content = "Alex, Andrew, Dillon, Rusty, Sierra"/>
 	
@@ -122,10 +123,10 @@
 	<div id="edit_stopwatch" style="display: none">
 		<br>
 		<form id="set_stopwatch_form" display="none">
-			<input type="button" id="stopwatch_start" value="Start">
-			<input type="button" id="stopwatch_pause" value="Pause">
-			<input type="button" id="stopwatch_resume" value="Resume">
-			<input type="button" id="stopwatch_reset" value="Reset">
+			<input type="button" id="stopwatch_start" value="Start" onclick="startWatch()">
+			<input type="button" id="stopwatch_pause" value="Pause" onclick="pauseWatch()">
+			<input type="button" id="stopwatch_resume" value="Resume" onclick="resumeWatch()">
+			<input type="button" id="stopwatch_reset" value="Reset" onclick="resetWatch()">
 		</form>
 	</div>
 
