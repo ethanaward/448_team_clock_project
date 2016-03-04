@@ -12,9 +12,9 @@
 	<script type="text/javascript" src="scripts/Clock.js"></script>
 	<script type="text/javascript" src="scripts/main.js"></script>
 	<script type="text/javascript" src="scripts/ChangeFont.js"></script>
-
+	<script type="text/javascript" src="scripts/ChangeDisplay.js"></script>
 	<title>Super Slick 448 Clock</title>
-	<meta name = "author" content = "Alex, An	drew, Dillon, Rusty, Sierra"/>
+	<meta name = "author" content = "Alex, Andrew, Dillon, Rusty, Sierra"/>
 	
 </head>	
 	
@@ -25,7 +25,7 @@
 	</h1>
 	
 	
- 	
+ 	<div id = "clock_display">
 	<h2>
 		
 		
@@ -33,8 +33,30 @@
 		
 		
 	</h2>
-	
-	
+	</div>
+
+ 	<div id = "timer_display" style="display: none">
+	<h2>
+		
+		
+		<p id="timer">00:00</p>
+		
+		
+	</h2>
+	</div>
+
+ 	<div id = "stopwatch_display" style="display: none">
+	<h2>
+		
+		
+		<p id="stopwatch">00:00</p>
+		
+		
+	</h2>
+	</div>
+	<button onclick="display_timer();">Display Timer</button>
+	<button onclick="display_clock();">Display Clock</button>
+	<button onclick="display_stopwatch();">Display Stopwatch</button>
 	<h3> 
 			Please pick initial hour formatting and set starting time.
 	</h3>
@@ -78,6 +100,7 @@
 			<input type="button" id="edit_time_clear_btn"  value="Clear" onclick="c.clearInput()" >
 			<input type="button" id="font_increase" value="Increase Font" onclick="increaseFont()">
 			<input type="button" id="font_decrease" value="Decrease Font" onclick="decreaseFont()">
+			<input type="button" id="font_hide" value="Hide Clock" onclick="hideFont()">
 			
 		</form>
 	</div>
