@@ -58,6 +58,11 @@
 	<button onclick="display_timer();">Display Timer</button>
 	<button onclick="display_clock();">Display Clock</button>
 	<button onclick="display_stopwatch();">Display Stopwatch</button>
+
+
+
+	<div id="edit_time_div">
+
 	<h3> 
 			Please pick initial hour formatting and set starting time.
 	</h3>
@@ -73,9 +78,6 @@
  
 
 	<input type="button" id="edit_time_tgl_btn" value="Edit Time" onclick="c.toggleTimeMenu()" hidden=true>
-
-
-	<div id="edit_time_div">
 		<br>
 		<form id="set_time_form" display="none">
 			Set Month:<br>
@@ -105,6 +107,7 @@
 	</div>
 
 	<div id="edit_timer" style="display: none">
+		<br>
 		<form id ="set_timer_form" display="none">
 			Set Hours:<br>
 			<input type="text" id="timer_hours"><br><br>
@@ -117,6 +120,7 @@
 	</div>
 
 	<div id="edit_stopwatch" style="display: none">
+		<br>
 		<form id="set_stopwatch_form" display="none">
 			<input type="button" id="stopwatch_start" value="Start">
 			<input type="button" id="stopwatch_pause" value="Pause">
