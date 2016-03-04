@@ -22,7 +22,7 @@ function display(num) {
 		stopwatch_form.style.display = 'none';
 
 	if(num==0){
-		if(editButton.hidden){
+		if(editButton.style.display=='none'){
 			clock.style.display = 'block';
 			clock_form.style.display = 'block';
 		}
