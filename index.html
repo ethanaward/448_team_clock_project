@@ -69,24 +69,19 @@
 		<input type="button" id="font_hide" value="Hide Clock" onclick="hideFont()">
 	</div>
 
+	<input type="button" id="edit_time_tgl_btn" value="Edit Time" onclick="c.toggleTimeMenu()" hidden=true>
 
 	<div id="edit_time_div">
-
-	<h3> 
+		<h3> 
 			Please pick initial hour formatting and set starting time.
-	</h3>
+		</h3>
 	
-	<div id="toggle_display_type_div">
-		<p>Hour Format: 
-
-	 	12 Hour: <input type="radio" name="time_format" id="12H" onclick=c.setFormat(12) checked=true>
-	 	24 Hour: <input type="radio" name="time_format" onclick=c.setFormat(24) id="24H">
-
-	 	</p>
-	</div>
- 
-
-	<input type="button" id="edit_time_tgl_btn" value="Edit Time" onclick="c.toggleTimeMenu()" hidden=true>
+		<div id="toggle_display_type_div">
+			<p>Hour Format: 
+		 	12 Hour: <input type="radio" name="time_format" id="12H" onclick=c.setFormat(12) checked=true>
+		 	24 Hour: <input type="radio" name="time_format" onclick=c.setFormat(24) id="24H">
+		 	</p>
+		</div>
 		<br>
 		<form id="set_time_form" display="none">
 			Set Month:<br>
@@ -101,9 +96,9 @@
 			<input type="text" id="input_seconds"><br><br>
 
 			Set Hour Format:<br>
-	 	AM: <input type="radio" name="set_time_format" id="am">
-		PM: <input type="radio" name="set_time_format" id="pm">
-	 	24 Hour: <input type="radio" name="set_time_format" id="u_24H"><br><br>
+	 		AM: <input type="radio" name="set_time_format" id="am">
+			PM: <input type="radio" name="set_time_format" id="pm">
+	 		24 Hour: <input type="radio" name="set_time_format" id="u_24H"><br><br>
 			
 			
 			<input type="button" id="edit_time_accept_btn" value="Accept" onclick="c.setTime()">
