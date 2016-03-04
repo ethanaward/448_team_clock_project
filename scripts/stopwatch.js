@@ -1,4 +1,4 @@
-var timeDate;
+var todayDate;
 var flag = true;
 var timeStamp;
 var resume = false;
@@ -6,7 +6,7 @@ var resume = false;
 function startWatch() {
 
 	flag = true;
-	timeDate = new Date();
+	todayDate = new Date();
 	timeStamp = -64800000;
 
 	//For some reason, a new Date(0) has 18 hours exactly, so I subtract those milliseconds off.
@@ -20,7 +20,7 @@ function startWatch() {
 function RunWatch() {
 
 	var newDate = new Date();
-	var countUp = newDate.getTime() - timeDate.getTime();
+	var countUp = newDate.getTime() - todayDate.getTime();
 	var newDisplay = new Date(timeStamp + countUp);
 
 	if(flag){
@@ -40,7 +40,7 @@ function pauseWatch(){
 function resumeWatch(){
 	if(!flag && resume){
 		flag = true;
-		timeDate = new Date();
+		todayDate = new Date();
 		RunWatch();
 	}
 }
@@ -48,7 +48,7 @@ function resumeWatch(){
 function resetWatch(){
 	flag = false;
 	resume = false;
-	timeDate = new Date();
+	todayDate = new Date();
 	timeStamp = -64800000;
 
 	var originalDisplay = new Date(timeStamp);
