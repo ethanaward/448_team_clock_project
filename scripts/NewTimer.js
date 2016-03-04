@@ -12,7 +12,7 @@ function MakeTimer() {
 
 	OutputTimer(originalDisplay);
 
-	window.setInterval(RunTimer, 1000);
+	window.setInterval(RunTimer, 500);
 }
 
 function RunTimer() {
