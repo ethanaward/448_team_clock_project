@@ -9,10 +9,10 @@ function MakeTimer() {
 	timeDate = new Date();
 	startTime = (hours-18) * 3600000 + min * 60000 + sec * 1000;
 	var originalDisplay = new Date(startTime);
-	var display = originalDisplay.getHours() + ":" + originalDisplay.getMinutes() + ":" + originalDisplay.getSeconds();
-	document.getElementById("timer").innerHTML = display;
+
+	OutputTimer(originalDisplay);
+
 	window.setInterval(RunTimer, 1000);
-	
 }
 
 function RunTimer() {
@@ -20,9 +20,16 @@ function RunTimer() {
 	var newDiff = newDate.getTime() - timeDate.getTime();
 	var newTime = startTime - newDiff;
 	var newDisplay = new Date(newTime);
-	var countDown = newDisplay.getHours() + ":" + newDisplay.getMinutes() + ":" + newDisplay.getSeconds();
+
+	OutputTimer(newDisplay);
+}
+
+function OutputTimer(countDate){
+
+	//It works exactly as it did before right now.
+	//Insert formatting stuff here!
+
+	var countDown = countDate.getHours() + ":" + countDate.getMinutes() + ":" + countDate.getSeconds();
+
 	document.getElementById("timer").innerHTML = countDown;
-	
-
-
 }
