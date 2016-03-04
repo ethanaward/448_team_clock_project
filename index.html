@@ -84,10 +84,8 @@
 			<input type="text" id="input_day"><br><br>
 			Set Hours:<br>
 			<input type="text" id="input_hours"><br><br>
-	 
 			Set Minutes:<br>
 			<input type="text" id="input_minutes"><br><br>
-	 
 			Set Seconds:<br>
 			<input type="text" id="input_seconds"><br><br>
 
@@ -102,10 +100,31 @@
 			<input type="button" id="font_increase" value="Increase Font" onclick="increaseFont()">
 			<input type="button" id="font_decrease" value="Decrease Font" onclick="decreaseFont()">
 			<input type="button" id="font_hide" value="Hide Clock" onclick="hideFont()">
-			<input type="button" id="timer_show" value="Create Timer" onclick="MakeTimer(1,0,0)">
-			
+
 		</form>
 	</div>
+
+	<div id="edit_timer" style="display: none">
+		<form id ="set_timer_form" display="none">
+			Set Hours:<br>
+			<input type="text" id="timer_hours"><br><br>
+			Set Minutes:<br>
+			<input type="text" id="timer_mins"><br><br>
+			Set Seconds:<br>
+			<input type="text" id="timer_secs"><br><br>
+			<input type="button" id="timer_show" value="Create Timer" onclick="MakeTimer(1,0,0)">
+		</form>	
+	</div>
+
+	<div id="edit_stopwatch" style="display: none">
+		<form id="set_stopwatch_form" display="none">
+			<input type="button" id="stopwatch_start" value="Start">
+			<input type="button" id="stopwatch_pause" value="Pause">
+			<input type="button" id="stopwatch_resume" value="Resume">
+			<input type="button" id="stopwatch_reset" value="Reset">
+		</form>
+	</div>
+
 
 </body>
 
