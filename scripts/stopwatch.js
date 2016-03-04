@@ -12,7 +12,7 @@ function startWatch() {
 	//For some reason, a new Date(0) has 18 hours exactly, so I subtract those milliseconds off.
 	var originalDisplay = new Date(timeStamp);
 
-	OutputTimer(originalDisplay);
+	OutputWatch(originalDisplay);
 
 	RunWatch();
 }
@@ -24,7 +24,7 @@ function RunWatch() {
 	var newDisplay = new Date(timeStamp + countUp);
 
 	if(flag){
-		OutputTimer(newDisplay);
+		OutputWatch(newDisplay);
 		setTimeout(RunWatch, 100);
 	}
 	else{
@@ -52,12 +52,17 @@ function resetWatch(){
 	timeStamp = -64800000;
 
 	var originalDisplay = new Date(timeStamp);
-	OutputTimer(originalDisplay);
+	OutputWatch(originalDisplay);
 }
 
-function OutputTimer(countDate){
+function OutputWatch(countDate){
 
-	var countDown = countDate.getHours() + ":" + countDate.getMinutes() + ":" + countDate.getSeconds();
+	var seconds = (countDate.getSeconds() < 10 ? "0" : "") + countDate.getSeconds();
+	var minutes = (countDate.getMinutes() < 10 ? "0" : "") + countDate.getMinutes();
+	var hours = (countDate.getHours() < 10 ? "0" : "") + countDate.getHours();
+
+
+	var countDown = hours + ":" + minutes + ":" + seconds;
 
 	document.getElementById("stopwatch").innerHTML = countDown;
 }
