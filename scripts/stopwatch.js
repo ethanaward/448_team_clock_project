@@ -1,6 +1,7 @@
 var timeDate;
-var flag;
+var flag = true;
 var timeStamp;
+var resume = false;
 
 function startWatch() {
 
@@ -18,33 +19,35 @@ function startWatch() {
 
 function RunWatch() {
 
+	var newDate = new Date();
+	var countUp = newDate.getTime() - timeDate.getTime();
+	var newDisplay = new Date(timeStamp + countUp);
+
 	if(flag){
-		var newDate = new Date();
-
-		var countUp = newDate.getTime() - timeDate.getTime();
-		var newDisplay = new Date(timeStamp + countUp);
-
 		OutputTimer(newDisplay);
-		setTimeout(RunWatch, 1000);
+		setTimeout(RunWatch, 100);
 	}
 	else{
-		var timeStampDate = new Date();
-		timeStamp += timeStampDate.getTime()-timeDate.getTime();
+		timeStamp += countUp;
 	}
-
 }
 
 function pauseWatch(){
 	flag = false;
+	resume = true;
 }
 
 function resumeWatch(){
-	flag = true;
-	RunWatch();
+	if(!flag && resume){
+		flag = true;
+		timeDate = new Date();
+		RunWatch();
+	}
 }
 
 function resetWatch(){
 	flag = false;
+	resume = false;
 	timeDate = new Date();
 	timeStamp = -64800000;
 
