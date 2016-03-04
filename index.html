@@ -56,10 +56,12 @@
 		
 	</h2>
 	</div>
-	<button onclick="display(0);">Display Clock</button>
-	<button onclick="display(1);">Display Timer</button>
-	<button onclick="display(2);">Display Stopwatch</button>
 
+	<div class = "displaybuttons">
+		<button onclick="display(0);">Display Clock</button>
+		<button onclick="display(1);">Display Timer</button>
+		<button onclick="display(2);">Display Stopwatch</button>
+	</div>
 
 
 	<div id="edit_time_div">
@@ -100,10 +102,11 @@
 			
 			<input type="button" id="edit_time_accept_btn" value="Accept" onclick="c.setTime()">
 			<input type="button" id="edit_time_clear_btn"  value="Clear" onclick="c.clearInput()" >
-			<input type="button" id="font_increase" value="Increase Font" onclick="increaseFont()">
-			<input type="button" id="font_decrease" value="Decrease Font" onclick="decreaseFont()">
-			<input type="button" id="font_hide" value="Hide Clock" onclick="hideFont()">
-
+			<div class = "fontcontrol">
+				<input type="button" id="font_increase" value="Increase Font" onclick="increaseFont()">
+				<input type="button" id="font_decrease" value="Decrease Font" onclick="decreaseFont()">
+				<input type="button" id="font_hide" value="Hide Clock" onclick="hideFont()">
+			</div>
 		</form>
 	</div>
 
