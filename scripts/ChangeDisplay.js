@@ -8,17 +8,28 @@ function display(num) {
 		var timer_form = document.getElementById('edit_timer');
 		var stopwatch_form = document.getElementById('edit_stopwatch');	
 
+		var editButtonDiv = document.getElementById('editTimeButton');
+		var editButton = document.getElementById('edit_time_tgl_btn');
+
 		clock.style.display = 'none';
 		stopwatch.style.display = 'none';
 		timer.style.display = 'none';
 
 		clock_form.style.display = 'none';
+		editTimeButton.style.display = 'none';
 		timer_form.style.display = 'none';
+
 		stopwatch_form.style.display = 'none';
 
 	if(num==0){
-		clock.style.display = 'block';
-		clock_form.style.display = 'block';
+		if(editButton.hidden){
+			clock.style.display = 'block';
+			clock_form.style.display = 'block';
+		}
+		else{
+			clock.style.display = 'block';
+			editButtonDiv.style.display = 'block';
+		}
 	}
 	if(num==1){
 		timer.style.display = 'block';
