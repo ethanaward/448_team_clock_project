@@ -12,11 +12,13 @@ var InputValidator = function(){
 	 */
 	this.toggleTimeMenu = function(){
 		var div = document.getElementById('edit_time_div');
-	    if (div.hidden !== true) {
-	        div.hidden = true;
+		if (!div.hidden) {
+			div.hidden = true;
 	    }
 	    else {
-	        div.hidden = false;
+			div.hidden = false;
+			div.style.display = 'block';	
+			document.getElementById('edit_time_tgl_btn').style.display = 'none';
 	    }
 	}
 
@@ -29,8 +31,11 @@ var InputValidator = function(){
 	 * that sets the time and keeps track of it.
 	 */ 
 	this.setTime = function(timerObj){
-		document.getElementById("edit_time_tgl_btn").hidden = false;
 		document.getElementById('edit_time_div').hidden = true;
+		document.getElementById('edit_time_div').style.display = 'none';
+		document.getElementById("edit_time_tgl_btn").hidden = false;
+		document.getElementById("edit_time_tgl_btn").style.display = 'inline';
+
 		var mo = document.getElementById("input_month").value;
 		var d = document.getElementById("input_day").value;
 		var h = document.getElementById("input_hours").value;
