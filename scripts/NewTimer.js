@@ -26,10 +26,11 @@ function RunTimer() {
 
 function OutputTimer(countDate){
 
-	//It works exactly as it did before right now.
-	//Insert formatting stuff here!
+	var seconds = (countDate.getSeconds() < 10 ? "0" : "") + countDate.getSeconds();
+	var minutes = (countDate.getMinutes() < 10 ? "0" : "") + countDate.getMinutes();
+	var hours = (countDate.getHours() < 10 ? "0" : "") + countDate.getHours();
 
-	var countDown = countDate.getHours() + ":" + countDate.getMinutes() + ":" + countDate.getSeconds();
+	var countDown = hours + ":" + minutes + ":" + seconds;
 
 	document.getElementById("timer").innerHTML = countDown;
 }
