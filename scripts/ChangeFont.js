@@ -58,6 +58,13 @@ function increaseFont() {
 
 	}
 
+	else if(size1.fontSize.length == 3) {
+
+		size1.fontSize = 10;
+		size2.fontSize = 10;
+		size3.fontSize = 10;
+	}
+
 }
 
 
