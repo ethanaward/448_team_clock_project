@@ -39,5 +39,19 @@ function display(num) {
 		stopwatch.style.display = 'block';
 		stopwatch_form.style.display = 'block';
 	}
+	if(num==3){
+		if(clock.style.display == 'block')
+		{
+			clock.style.display == 'none';
+		}
+		if(timer.style.display == 'block')
+		{
+			timer.style.display == 'none';
+		}
+		if(stopwatch.style.display == 'block')
+		{
+			stopwatch.style.display == 'none';
+		}
+	}
 	
 }
