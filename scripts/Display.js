@@ -18,46 +18,46 @@ var Display = function(){
 	this.displayTime = function(timeArr){
 		var daysPassed = 0;
 		var weekDay = 0;
-		var week = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]
+		var week = ["Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"]
 
 		document.getElementById("time").innerHTML = this.checkNumber(timeArr[4]) + "/" + this.checkNumber(timeArr[5]) + " " + this.checkNumber(timeArr[0]) + ":" + this.checkNumber(timeArr[1]) + ":" + this.checkNumber(timeArr[2]) + " " + timeArr[3];
 
 
 		if(timeArr[4] == 1){
-			daysPassed = timeArr[5] - 1;
+			daysPassed = Number(timeArr[5]);
 		}
-		if(timeArr[4] == 2){
-			daysPassed = timeArr[5] + 31 - 2;
+		else if(timeArr[4] == 2){
+			daysPassed = Number(timeArr[5]) + 31;
 		}
-		if(timeArr[4] == 3){
-			daysPassed = timeArr[5] + 60 - 2;
+		else if(timeArr[4] == 3){
+			daysPassed = Number(timeArr[5]) + 60;
 		}
-		if(timeArr[4] == 4){
-			daysPassed = timeArr[5] + 91 - 2;
+		else if(timeArr[4] == 4){
+			daysPassed = Number(timeArr[5]) + 91;
 		}
-		if(timeArr[4] == 5){
-			daysPassed = timeArr[5] + 121 - 2;
+		else if(timeArr[4] == 5){
+			daysPassed = Number(timeArr[5]) + 121;
 		}
-		if(timeArr[4] == 6){O
-			daysPassed = timeArr[5] + 152 - 2;
+		else if(timeArr[4] == 6){
+			daysPassed = Number(timeArr[5]) + 152;
 		}
-		if(timeArr[4] == 7){
-			daysPassed = timeArr[5] + 182 - 2;
+		else if(timeArr[4] == 7){
+			daysPassed = Number(timeArr[5]) + 182;
 		}
-		if(timeArr[4] == 8){
-			daysPassed = timeArr[5] + 213 - 2;
+		else if(timeArr[4] == 8){
+			daysPassed = Number(timeArr[5]) + 213;
 		}
-		if(timeArr[4] == 9){
-			daysPassed = timeArr[5] + 244 - 2;
+		else if(timeArr[4] == 9){
+			daysPassed = Number(timeArr[5]) + 244;
 		}
-		if(timeArr[4] == 10){
-			daysPassed = timeArr[5] + 274 - 2;
+		else if(timeArr[4] == 10){
+			daysPassed = Number(timeArr[5]) + 274;
 		}
-		if(timeArr[4] == 11){
-			daysPassed = timeArr[5] + 305 - 2;
+		else if(timeArr[4] == 11){
+			daysPassed = Number(timeArr[5]) + 305;
 		}
-		if(timeArr[4] == 12){
-			daysPassed = timeArr[5] + 335 - 2;
+		else if(timeArr[4] == 12){
+			daysPassed = Number(timeArr[5]) + 335;
 		}
 
 		weekDay = daysPassed % 7;
