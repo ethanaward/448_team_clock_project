@@ -1,5 +1,5 @@
 /**
-*	@file : stopwatch.js
+*	@file : Display.js
 *	@author : Mike Neises, Travis Augustine, Ethan Ward, Group 13
 *	@date : 2016.03.06
 *	@brief: Displays the outputs of the clock feature.
