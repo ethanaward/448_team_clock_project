@@ -1,8 +1,21 @@
+/**
+*	@file : stopwatch.js
+*	@author : Travis Augustine, Ethan Ward, Mike Neises
+*	@date : 2016.03.06
+*	@brief: Displays user interface for starting, pausing, resume, and reseting a seconds timer.
+*/
+
 var timeDate;
 var stop = false;
 var pause = false;
 var daysOver = 0;
 
+/**
+	*  @name MakeTimer
+	*  @pre None
+	*  @post The timer is initialized at input time, and it calls runTimer
+	*  @return None
+*/
 function MakeTimer() {
 
 	var hours = document.getElementById("timer_hours").value;
@@ -22,6 +35,12 @@ function MakeTimer() {
 	RunTimer();
 }
 
+/**
+	*  @name RunTimer
+	*  @pre MakeTimer has been run first
+	*  @post The timer is incremented down by 1 second every second
+	*  @return None
+*/
 function RunTimer() {
 
 	var newDate = new Date();
@@ -40,6 +59,12 @@ function RunTimer() {
 
 }
 
+/**
+	*  @name PauseTimer
+	*  @pre None
+	*  @post A stop flag is thrown
+	*  @return None
+*/
 function PauseTimer() {
 
 	stop = true;
@@ -47,6 +72,12 @@ function PauseTimer() {
 
 }
 
+/**
+	*  @name ResumeTimer
+	*  @pre The timer was paused
+	*  @post The timer continues
+	*  @return None
+*/
 function ResumeTimer() {
 
 	if(stop && !pause) {
@@ -57,6 +88,12 @@ function ResumeTimer() {
 	}
 }
 
+/**
+	*  @name ResetTimer
+	*  @pre 
+	*  @post 
+	*  @return 
+*/
 function ResetTimer() {
 
 	stop = true;
@@ -76,6 +113,12 @@ function ResetTimer() {
 
 }
 
+/**
+	*  @name OutputTimer
+	*  @pre None
+	*  @post The timer is reset to inputs, and does not begin counting, because a flag is thrown.
+	*  @return None
+*/
 function OutputTimer(countDate){
 
 	var seconds = (countDate.getSeconds() < 10 ? "0" : "") + countDate.getSeconds();
