@@ -1,5 +1,5 @@
 /**
-*	@file : myClock.js
+*	@file : stopwatch.js
 *	@author : Mike Neises
 *	@date : 2016.03.06
 *	@brief: Displays user interface for starting, pausing, resume, and reseting a seconds counter.
