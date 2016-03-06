@@ -1,3 +1,7 @@
+var previousDisplay = 0;
+var visible = true;
+var prevVisible = true;
+
 function display(num) {
 
 		var clock = document.getElementById('clock_display');
@@ -11,6 +15,19 @@ function display(num) {
 		var editButtonDiv = document.getElementById('editTimeButton');
 		var editButton = document.getElementById('edit_time_tgl_btn');
 
+		if(clock.style.display == 'block')
+		{
+			previousDisplay = 0;
+		}
+		else if(timer.style.display == 'block')
+		{
+			previousDisplay = 1;
+		}
+		else if(stopwatch.style.display == 'block')
+		{
+			previousDisplay = 2;
+		}
+
 		clock.style.display = 'none';
 		stopwatch.style.display = 'none';
 		timer.style.display = 'none';
@@ -20,8 +37,11 @@ function display(num) {
 		timer_form.style.display = 'none';
 
 		stopwatch_form.style.display = 'none';
+	
+		visible = false;
 
 	if(num==0){
+		visible = true;
 		if(editButton.style.display=='none'){
 			clock.style.display = 'block';
 			clock_form.style.display = 'block';
@@ -30,28 +50,27 @@ function display(num) {
 			clock.style.display = 'block';
 			editButtonDiv.style.display = 'block';
 		}
+		document.getElementById('font_hide').value = "Hide Display";
 	}
 	if(num==1){
+		visible = true;
 		timer.style.display = 'block';
 		timer_form.style.display = 'block';
+		document.getElementById('font_hide').value = "Hide Display";
 	}
 	if(num==2){
+		visible = true;
 		stopwatch.style.display = 'block';
 		stopwatch_form.style.display = 'block';
+		document.getElementById('font_hide').value = "Hide Display";
 	}
 	if(num==3){
-		if(clock.style.display == 'block')
-		{
-			clock.style.display == 'none';
+		document.getElementById('font_hide').value = "Show Display";
+		if(!visible && !prevVisible){
+			display(previousDisplay);
+			document.getElementById('font_hide').value = "Hide Display";
 		}
-		if(timer.style.display == 'block')
-		{
-			timer.style.display == 'none';
-		}
-		if(stopwatch.style.display == 'block')
-		{
-			stopwatch.style.display == 'none';
-		}
+
 	}
-	
+	prevVisible = visible;
 }
