@@ -1,4 +1,6 @@
 var timeDate;
+var stop = false;
+var pause = false;
 
 function MakeTimer() {
 
@@ -6,22 +8,50 @@ function MakeTimer() {
 	var min = document.getElementById("timer_mins").value;
 	var sec = document.getElementById("timer_secs").value;
 
+	stop = false;
+
 	timeDate = new Date();
 	startTime = (hours-18) * 3600000 + min * 60000 + sec * 1000;
 	var originalDisplay = new Date(startTime);
 
 	OutputTimer(originalDisplay);
 
-	window.setInterval(RunTimer, 500);
+	RunTimer();
 }
 
 function RunTimer() {
+
 	var newDate = new Date();
 	var newDiff = newDate.getTime() - timeDate.getTime();
 	var newTime = startTime - newDiff;
 	var newDisplay = new Date(newTime);
 
-	OutputTimer(newDisplay);
+	if(!stop) {
+		OutputTimer(newDisplay);
+		setTimeout(RunTimer, 100);
+	}
+
+	else {
+		startTime -= newDiff;
+	}
+
+}
+
+function PauseTimer() {
+
+	stop = true;
+	pause = false;
+
+}
+
+function ResumeTimer() {
+
+	if(stop && !pause) {
+		stop = false;
+		timeDate = new Date();
+		RunTimer();
+
+	}
 }
 
 function OutputTimer(countDate){
