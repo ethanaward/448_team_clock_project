@@ -1,10 +1,9 @@
 /**
- * Display.js
- *
- * Creates an instance of Display.
- *
- * @constructor
- */
+*	@file : stopwatch.js
+*	@author : Mike Neises, Travis Augustine, Ethan Ward, Group 13
+*	@date : 2016.03.06
+*	@brief: Displays the outputs of the clock feature.
+*/
 var Display = function(){
 
 	/**
@@ -18,11 +17,16 @@ var Display = function(){
 	this.displayTime = function(timeArr){
 		var daysPassed = 0;
 		var weekDay = 0;
+		//------------------------------------------------------------------------
+		//This array starts with Friday at index 1, because 1/1/2016 is a Friday.
+		//------------------------------------------------------------------------
 		var week = ["Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"]
 
 		document.getElementById("time").innerHTML = this.checkNumber(timeArr[4]) + "/" + this.checkNumber(timeArr[5]) + " " + this.checkNumber(timeArr[0]) + ":" + this.checkNumber(timeArr[1]) + ":" + this.checkNumber(timeArr[2]) + " " + timeArr[3];
 
-
+		//------------------------------------------------------------
+		//Here, days are added to daysPassed based on what month it is.
+		//------------------------------------------------------------
 		if(timeArr[4] == 1){
 			daysPassed = Number(timeArr[5]);
 		}
@@ -61,7 +65,6 @@ var Display = function(){
 		}
 
 		weekDay = daysPassed % 7;
-
 
 		document.getElementById("dayOfWeek").innerHTML = week[weekDay];
 	
