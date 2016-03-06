@@ -1,5 +1,5 @@
 /**
-*	@file : stopwatch.js
+*	@file : ChangeDisplay.js
 *	@author : Mike Neises, Travis Augustine, Ethan Ward, Group 13
 *	@date : 2016.03.06
 *	@brief: Changes the display so that the user can interact with the different features.
