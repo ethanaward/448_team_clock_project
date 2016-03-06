@@ -7,6 +7,7 @@ function initialFont() {
 	var timer = document.getElementById("timer");
 
 	var stopwatch = document.getElementById("stopwatch");
+	var weekDay = document.getElementById("dayOfWeek");
 
 
 
@@ -15,8 +16,13 @@ function initialFont() {
 	timer.style.fontSize = "70px";
 
 	stopwatch.style.fontSize = "70px";
+	weekDay.style.fontSize = "70px";
 
 }
+
+
+
+
 
 
 
@@ -27,7 +33,10 @@ function increaseFont() {
 	var size1 = document.getElementById("time").style;
 
 	var size2 = document.getElementById("timer").style;
+
 	var size3 = document.getElementById("stopwatch").style;
+	var size4 = document.getElementById("dayOfWeek").style;
+
 
 
 	if(size1.fontSize.length == 5) {
@@ -38,9 +47,13 @@ function increaseFont() {
 
 		num = num + "px";
 
+
 		size1.fontSize = num;
+
 		size2.fontSize = num;
+
 		size3.fontSize = num;
+		size4.fontSize = num;
 
 }
 
@@ -52,17 +65,26 @@ function increaseFont() {
 
 		num = num + "px";
 
+
+
 		size1.fontSize = num;
+
 		size2.fontSize = num;
+
 		size3.fontSize = num;
+		size4.fontSize = num;
 
 	}
 
 	else if(size1.fontSize.length == 3) {
 
 		size1.fontSize = 10;
+
 		size2.fontSize = 10;
+
 		size3.fontSize = 10;
+		size4.fontSize = 10;
+
 	}
 
 }
@@ -76,7 +98,9 @@ function decreaseFont() {
 	var size1 = document.getElementById("time").style;
 
 	var size2 = document.getElementById("timer").style;
+
 	var size3 = document.getElementById("stopwatch").style;
+	var size4 = document.getElementById("dayOfWeek").style;
 
 
 
@@ -88,9 +112,14 @@ function decreaseFont() {
 
 		num = num + "px";
 
+
+
 		size1.fontSize = num;
+
 		size2.fontSize = num;
+
 		size3.fontSize = num;
+		size4.fontSize = num;
 
 	}
 
@@ -102,9 +131,14 @@ function decreaseFont() {
 
 		num = num + "px";
 
+
+
 		size1.fontSize = num;
+
 		size2.fontSize = num;
+
 		size3.fontSize = num;
+		size4.fontSize = num;
 
 	}
 
