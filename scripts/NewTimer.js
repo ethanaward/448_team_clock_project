@@ -1,5 +1,5 @@
 /**
-*	@file : stopwatch.js
+*	@file : NewTimer.js
 *	@author : Travis Augustine, Ethan Ward, Mike Neises
 *	@date : 2016.03.06
 *	@brief: Displays user interface for starting, pausing, resume, and reseting a seconds timer.
