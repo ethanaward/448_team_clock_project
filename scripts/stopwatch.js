@@ -1,8 +1,21 @@
+/**
+*	@file : myClock.js
+*	@author : Mike Neises
+*	@date : 2016.03.06
+*	@brief: Displays user interface for starting, pausing, resume, and reseting a seconds counter.
+*/
+
 var todayDate;
 var flag = true;
 var timeStamp;
 var resume = false;
 
+/**
+        *  @name startWatch
+	*  @pre none
+	*  @post The stopwatch is initialized at 0, and it calls RunWatch
+	*  @return none
+*/
 function startWatch() {
 
 	flag = true;
@@ -17,6 +30,12 @@ function startWatch() {
 	RunWatch();
 }
 
+/**
+        *  @name RunWatch
+	*  @pre A timestamp exists
+	*  @post The stopwatch is incremented by 1 second every second, until a flag is thrown
+	*  @return None
+*/
 function RunWatch() {
 
 	var newDate = new Date();
@@ -32,11 +51,23 @@ function RunWatch() {
 	}
 }
 
+/**
+        *  @name pauseWatch
+	*  @pre None
+	*  @post A flag is thrown
+	*  @return None
+*/
 function pauseWatch(){
 	flag = false;
 	resume = true;
 }
 
+/**
+        *  @name resumeWatch
+	*  @pre The stopwatch was paused
+	*  @post The stopwatch begins ticking again
+	*  @return None
+*/
 function resumeWatch(){
 	if(!flag && resume){
 		flag = true;
@@ -45,6 +76,12 @@ function resumeWatch(){
 	}
 }
 
+/**
+        *  @name resetWatch
+	*  @pre None
+	*  @post The stopwatch is set to 0, and it does not tick up because a flag is thrown.
+	*  @return None
+*/
 function resetWatch(){
 	flag = false;
 	resume = false;
@@ -55,6 +92,12 @@ function resetWatch(){
 	OutputWatch(originalDisplay);
 }
 
+/**
+        *  @name OutputWatch
+	*  @pre RunWatch has been run already
+	*  @post The output of the running stopwatch is displayed
+	*  @return None
+*/
 function OutputWatch(countDate){
 
 	var seconds = (countDate.getSeconds() < 10 ? "0" : "") + countDate.getSeconds();
