@@ -54,6 +54,25 @@ function ResumeTimer() {
 	}
 }
 
+function ResetTimer() {
+
+	stop = true;
+	pause = true;
+
+	var hours = document.getElementById("timer_hours").value;
+	var min = document.getElementById("timer_mins").value;
+	var sec = document.getElementById("timer_secs").value;
+
+	timeDate = new Date();
+
+	startTime = (hours-18) * 3600000 + min * 60000 + sec * 1000;
+	var originalDisplay = new Date(startTime);
+
+	OutputTimer(originalDisplay);
+
+
+}
+
 function OutputTimer(countDate){
 
 	var seconds = (countDate.getSeconds() < 10 ? "0" : "") + countDate.getSeconds();
