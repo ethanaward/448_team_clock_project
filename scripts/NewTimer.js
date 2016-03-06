@@ -22,6 +22,21 @@ function MakeTimer() {
 	var min = document.getElementById("timer_mins").value;
 	var sec = document.getElementById("timer_secs").value;
 
+	
+
+	if(isNaN(hours) || hours%1!=0 || hours=="")
+	{
+		alert("invalid hours");
+	}
+	else if(isNaN(min) || min%1!=0 || min =="")
+	{
+		alert("invalid minutes");
+	}
+	else if(isNaN(sec) || sec%1!=0 || sec == "")
+	{
+		alert("invalid seconds");
+	}
+	else{
 	daysOver = (hours - (hours % 24))/24;
 
 	stop = false;
@@ -33,6 +48,7 @@ function MakeTimer() {
 	OutputTimer(originalDisplay);
 
 	RunTimer();
+	}
 }
 
 /**
@@ -103,13 +119,26 @@ function ResetTimer() {
 	var min = document.getElementById("timer_mins").value;
 	var sec = document.getElementById("timer_secs").value;
 
+	if(isNaN(hours) || hours%1!=0 || hours=="")
+	{
+		alert("invalid hours");
+	}
+	else if(isNaN(min) || min%1!=0 || min =="")
+	{
+		alert("invalid minutes");
+	}
+	else if(isNaN(sec) || sec%1!=0 || sec == "")
+	{
+		alert("invalid seconds");
+	}
+	else{
 	timeDate = new Date();
 
 	startTime = (hours-18) * 3600000 + min * 60000 + sec * 1000;
 	var originalDisplay = new Date(startTime);
 
 	OutputTimer(originalDisplay);
-
+	}
 
 }
 
