@@ -1,5 +1,5 @@
 /**
-*	@file : stopwatch.js
+*	@file : ChangeFont.js
 *	@author : Mike Neises, Travis Augustine, Ethan Ward
 *	@date : 2016.03.06
 *	@brief: Functions for setting initial font size, increasing, decreasing, and hiding the displays.
