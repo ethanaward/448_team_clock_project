@@ -1,7 +1,21 @@
+/**
+*	@file : stopwatch.js
+*	@author : Mike Neises, Travis Augustine, Ethan Ward, Group 13
+*	@date : 2016.03.06
+*	@brief: Displays user interface for starting, pausing, resume, and reseting a seconds counter.
+*/
+
 var previousDisplay = 0;
 var visible = true;
 var prevVisible = true;
 
+
+/**
+	*  @name display
+	*  @pre None
+	*  @post The display is changed based on the input parameter. All elements are hidden, and then some may be shown back again.
+	*  @return None
+*/
 function display(num) {
 
 		var clock = document.getElementById('clock_display');
