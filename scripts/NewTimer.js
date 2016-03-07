@@ -108,7 +108,7 @@ function ResumeTimer() {
 	*  @name ResetTimer
 	*  @pre 
 	*  @post 
-	*  @return 
+	*  @return None
 */
 function ResetTimer() {
 
