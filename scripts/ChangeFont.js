@@ -6,7 +6,7 @@
 */
 
 /**
-	*  @name 
+	*  @name initialFont
 	*  @pre None
 	*  @post The four elements are set to an initial font size
 	*  @return none
@@ -24,7 +24,7 @@ function initialFont() {
 }
 
 /**
-	*  @name 
+	*  @name increaseFont
 	*  @pre None
 	*  @post The four elements are increased in font size
 	*  @return none
@@ -64,7 +64,7 @@ function increaseFont() {
 }
 
 /**
-	*  @name 
+	*  @name decreaseFont
 	*  @pre None
 	*  @post The four elements are decreased in font size
 	*  @return none
