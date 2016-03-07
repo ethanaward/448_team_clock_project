@@ -77,6 +77,7 @@ var Display = function(){
 	 * @return {string} The padded number.
 	 */
 	this.checkNumber = function(number_to_check) {
+		number_to_check = Number(number_to_check);
 		if( number_to_check < 10)
 			number_to_check = "0" + number_to_check;
 
