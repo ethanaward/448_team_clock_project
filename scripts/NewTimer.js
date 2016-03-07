@@ -119,15 +119,15 @@ function ResetTimer() {
 	var min = document.getElementById("timer_mins").value;
 	var sec = document.getElementById("timer_secs").value;
 
-	if(isNaN(hours) || hours%1!=0 || hours=="")
+	if(isNaN(hours) || hours%1!=0)
 	{
 		alert("invalid hours");
 	}
-	else if(isNaN(min) || min%1!=0 || min =="")
+	else if(isNaN(min) || min%1!=0)
 	{
 		alert("invalid minutes");
 	}
-	else if(isNaN(sec) || sec%1!=0 || sec == "")
+	else if(isNaN(sec) || sec%1!=0)
 	{
 		alert("invalid seconds");
 	}
@@ -158,6 +158,7 @@ function OutputTimer(countDate){
 
 	if(seconds==0&&minutes==0&&hours==0){
 		stop = true;
+		pause = true;
 		document.getElementById("timer").innerHTML = countDown;
 		alert("Timer is finished!");
 	}
