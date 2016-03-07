@@ -24,15 +24,15 @@ function MakeTimer() {
 
 	
 
-	if(isNaN(hours) || hours%1!=0 || hours=="")
+	if(isNaN(hours) || hours%1!=0)
 	{
 		alert("invalid hours");
 	}
-	else if(isNaN(min) || min%1!=0 || min =="")
+	else if(isNaN(min) || min%1!=0)
 	{
 		alert("invalid minutes");
 	}
-	else if(isNaN(sec) || sec%1!=0 || sec == "")
+	else if(isNaN(sec) || sec%1!=0)
 	{
 		alert("invalid seconds");
 	}
