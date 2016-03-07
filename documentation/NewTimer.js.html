@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: NewTimer.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: NewTimer.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+*	@file : NewTimer.js
+*	@author : Travis Augustine, Ethan Ward, Mike Neises
+*	@date : 2016.03.06
+*	@brief: Displays user interface for starting, pausing, resume, and reseting a seconds timer.
+*/
+
+var timeDate;
+var stop = false;
+var pause = false;
+var daysOver = 0;
+
+/**
+	*  @name MakeTimer
+	*  @pre None
+	*  @post The timer is initialized at input time, and it calls runTimer
+	*  @return None
+*/
+function MakeTimer() {
+
+	var hours = document.getElementById("timer_hours").value;
+	var min = document.getElementById("timer_mins").value;
+	var sec = document.getElementById("timer_secs").value;
+
+	
+
+	if(isNaN(hours) || hours%1!=0 || hours=="")
+	{
+		alert("invalid hours");
+	}
+	else if(isNaN(min) || min%1!=0 || min =="")
+	{
+		alert("invalid minutes");
+	}
+	else if(isNaN(sec) || sec%1!=0 || sec == "")
+	{
+		alert("invalid seconds");
+	}
+	else{
+	daysOver = (hours - (hours % 24))/24;
+
+	stop = false;
+
+	timeDate = new Date();
+	startTime = (hours-18) * 3600000 + min * 60000 + sec * 1000;
+	var originalDisplay = new Date(startTime);
+
+	OutputTimer(originalDisplay);
+
+	RunTimer();
+	}
+}
+
+/**
+	*  @name RunTimer
+	*  @pre MakeTimer has been run first
+	*  @post The timer is incremented down by 1 second every second
+	*  @return None
+*/
+function RunTimer() {
+
+	var newDate = new Date();
+	var newDiff = newDate.getTime() - timeDate.getTime();
+	var newTime = startTime - newDiff;
+	var newDisplay = new Date(newTime);
+
+	if(!stop) {
+		OutputTimer(newDisplay);
+		setTimeout(RunTimer, 100);
+	}
+
+	else {
+		startTime -= newDiff;
+	}
+
+}
+
+/**
+	*  @name PauseTimer
+	*  @pre None
+	*  @post A stop flag is thrown
+	*  @return None
+*/
+function PauseTimer() {
+
+	stop = true;
+	pause = false;
+
+}
+
+/**
+	*  @name ResumeTimer
+	*  @pre The timer was paused
+	*  @post The timer continues
+	*  @return None
+*/
+function ResumeTimer() {
+
+	if(stop &amp;&amp; !pause) {
+		stop = false;
+		timeDate = new Date();
+		RunTimer();
+
+	}
+}
+
+/**
+	*  @name ResetTimer
+	*  @pre 
+	*  @post 
+	*  @return None
+*/
+function ResetTimer() {
+
+	stop = true;
+	pause = true;
+
+	var hours = document.getElementById("timer_hours").value;
+	var min = document.getElementById("timer_mins").value;
+	var sec = document.getElementById("timer_secs").value;
+
+	if(isNaN(hours) || hours%1!=0 || hours=="")
+	{
+		alert("invalid hours");
+	}
+	else if(isNaN(min) || min%1!=0 || min =="")
+	{
+		alert("invalid minutes");
+	}
+	else if(isNaN(sec) || sec%1!=0 || sec == "")
+	{
+		alert("invalid seconds");
+	}
+	else{
+	timeDate = new Date();
+
+	startTime = (hours-18) * 3600000 + min * 60000 + sec * 1000;
+	var originalDisplay = new Date(startTime);
+
+	OutputTimer(originalDisplay);
+	}
+
+}
+
+/**
+	*  @name OutputTimer
+	*  @pre None
+	*  @post The timer is reset to inputs, and does not begin counting, because a flag is thrown.
+	*  @return None
+*/
+function OutputTimer(countDate){
+
+	var seconds = (countDate.getSeconds() &lt; 10 ? "0" : "") + countDate.getSeconds();
+	var minutes = (countDate.getMinutes() &lt; 10 ? "0" : "") + countDate.getMinutes();
+	var hours = ((countDate.getHours()+24*daysOver) &lt; 10 ? "0" : "") + (countDate.getHours()+24*daysOver);
+
+	var countDown = hours + ":" + minutes + ":" + seconds;
+
+	if(seconds==0&amp;&amp;minutes==0&amp;&amp;hours==0){
+		stop = true;
+		document.getElementById("timer").innerHTML = countDown;
+		alert("Timer is finished!");
+	}
+
+	document.getElementById("timer").innerHTML = countDown;
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Clock.html">Clock</a></li><li><a href="InputValidator.html">InputValidator</a></li><li><a href="Timer.html">Timer</a></li></ul><h3>Global</h3><ul><li><a href="global.html#checkNumber">checkNumber</a></li><li><a href="global.html#clearInput">clearInput</a></li><li><a href="global.html#decreaseFont">decreaseFont</a></li><li><a href="global.html#display">display</a></li><li><a href="global.html#displayTime">displayTime</a></li><li><a href="global.html#increaseFont">increaseFont</a></li><li><a href="global.html#initialFont">initialFont</a></li><li><a href="global.html#main">main</a></li><li><a href="global.html#MakeTimer">MakeTimer</a></li><li><a href="global.html#OutputTimer">OutputTimer</a></li><li><a href="global.html#OutputWatch">OutputWatch</a></li><li><a href="global.html#PauseTimer">PauseTimer</a></li><li><a href="global.html#pauseWatch">pauseWatch</a></li><li><a href="global.html#ResetTimer">ResetTimer</a></li><li><a href="global.html#resetWatch">resetWatch</a></li><li><a href="global.html#ResumeTimer">ResumeTimer</a></li><li><a href="global.html#resumeWatch">resumeWatch</a></li><li><a href="global.html#RunTimer">RunTimer</a></li><li><a href="global.html#RunWatch">RunWatch</a></li><li><a href="global.html#startWatch">startWatch</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sun Mar 06 2016 18:18:07 GMT-0600 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

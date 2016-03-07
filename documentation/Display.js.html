@@ -27,12 +27,11 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Display.js
- *
- * Creates an instance of Display.
- *
- * @constructor
- */
+*	@file : Display.js
+*	@author : Mike Neises, Travis Augustine, Ethan Ward, Group 13
+*	@date : 2016.03.06
+*	@brief: Displays the outputs of the clock feature.
+*/
 var Display = function(){
 
 	/**
@@ -44,10 +43,59 @@ var Display = function(){
 	 * the Timer class with indicies [hour, min, sec, meridiem].
 	 */
 	this.displayTime = function(timeArr){
-		document.getElementById("time").innerHTML = this.checkNumber(timeArr[0]) + ":" + 
-													this.checkNumber(timeArr[1]) + ":" + 
-													this.checkNumber(timeArr[2]) + " " +
-													timeArr[3];
+		var daysPassed = 0;
+		var weekDay = 0;
+		//------------------------------------------------------------------------
+		//This array starts with Friday at index 1, because 1/1/2016 is a Friday.
+		//------------------------------------------------------------------------
+		var week = ["Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"]
+
+		document.getElementById("time").innerHTML = this.checkNumber(timeArr[4]) + "/" + this.checkNumber(timeArr[5]) + " " + this.checkNumber(timeArr[0]) + ":" + this.checkNumber(timeArr[1]) + ":" + this.checkNumber(timeArr[2]) + " " + timeArr[3];
+
+		//------------------------------------------------------------
+		//Here, days are added to daysPassed based on what month it is.
+		//------------------------------------------------------------
+		if(timeArr[4] == 1){
+			daysPassed = Number(timeArr[5]);
+		}
+		else if(timeArr[4] == 2){
+			daysPassed = Number(timeArr[5]) + 31;
+		}
+		else if(timeArr[4] == 3){
+			daysPassed = Number(timeArr[5]) + 60;
+		}
+		else if(timeArr[4] == 4){
+			daysPassed = Number(timeArr[5]) + 91;
+		}
+		else if(timeArr[4] == 5){
+			daysPassed = Number(timeArr[5]) + 121;
+		}
+		else if(timeArr[4] == 6){
+			daysPassed = Number(timeArr[5]) + 152;
+		}
+		else if(timeArr[4] == 7){
+			daysPassed = Number(timeArr[5]) + 182;
+		}
+		else if(timeArr[4] == 8){
+			daysPassed = Number(timeArr[5]) + 213;
+		}
+		else if(timeArr[4] == 9){
+			daysPassed = Number(timeArr[5]) + 244;
+		}
+		else if(timeArr[4] == 10){
+			daysPassed = Number(timeArr[5]) + 274;
+		}
+		else if(timeArr[4] == 11){
+			daysPassed = Number(timeArr[5]) + 305;
+		}
+		else if(timeArr[4] == 12){
+			daysPassed = Number(timeArr[5]) + 335;
+		}
+
+		weekDay = daysPassed % 7;
+
+		document.getElementById("dayOfWeek").innerHTML = week[weekDay];
+	
 	}
 
 	/**
@@ -60,19 +108,22 @@ var Display = function(){
 		if( number_to_check &lt; 10)
 			number_to_check = "0" + number_to_check;
 
-		return number_to_check
+		return number_to_check;
 	}
 	
 	/**
 	 * Clears the input fields of the html form for time entry.
 	 */
 	this.clearInput = function(){
+		document.getElementById("input_month"  ).value = "";
+		document.getElementById("input_day"    ).value = "";
 		document.getElementById("input_hours"  ).value = "";
 		document.getElementById("input_minutes").value = "";
 		document.getElementById("input_seconds").value = "";	
 	}
 
-};</code></pre>
+};
+</code></pre>
         </article>
     </section>
 
@@ -82,13 +133,13 @@ var Display = function(){
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Clock.html">Clock</a></li><li><a href="Display.html">Display</a></li><li><a href="InputValidator.html">InputValidator</a></li><li><a href="Timer.html">Timer</a></li></ul><h3>Global</h3><ul><li><a href="global.html#main">main</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Clock.html">Clock</a></li><li><a href="InputValidator.html">InputValidator</a></li><li><a href="Timer.html">Timer</a></li></ul><h3>Global</h3><ul><li><a href="global.html#checkNumber">checkNumber</a></li><li><a href="global.html#clearInput">clearInput</a></li><li><a href="global.html#decreaseFont">decreaseFont</a></li><li><a href="global.html#display">display</a></li><li><a href="global.html#displayTime">displayTime</a></li><li><a href="global.html#increaseFont">increaseFont</a></li><li><a href="global.html#initialFont">initialFont</a></li><li><a href="global.html#main">main</a></li><li><a href="global.html#MakeTimer">MakeTimer</a></li><li><a href="global.html#OutputTimer">OutputTimer</a></li><li><a href="global.html#OutputWatch">OutputWatch</a></li><li><a href="global.html#PauseTimer">PauseTimer</a></li><li><a href="global.html#pauseWatch">pauseWatch</a></li><li><a href="global.html#ResetTimer">ResetTimer</a></li><li><a href="global.html#resetWatch">resetWatch</a></li><li><a href="global.html#ResumeTimer">ResumeTimer</a></li><li><a href="global.html#resumeWatch">resumeWatch</a></li><li><a href="global.html#RunTimer">RunTimer</a></li><li><a href="global.html#RunWatch">RunWatch</a></li><li><a href="global.html#startWatch">startWatch</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sun Feb 14 2016 21:50:20 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sun Mar 06 2016 18:18:07 GMT-0600 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
