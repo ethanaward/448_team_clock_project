@@ -82,10 +82,10 @@ function RunTimer() {
 	*  @return None
 */
 function PauseTimer() {
-
-	stop = true;
-	pause = false;
-
+	if(!stop){
+		stop = true;
+		pause = false;
+	}
 }
 
 /**
@@ -156,7 +156,7 @@ function OutputTimer(countDate){
 
 	var countDown = hours + ":" + minutes + ":" + seconds;
 
-	if(seconds==0&&minutes==0&&hours==0){
+	if(seconds==0&&minutes==0&&hours==0&&!stop){
 		stop = true;
 		pause = true;
 		document.getElementById("timer").innerHTML = countDown;
